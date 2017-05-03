@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  AppDelegate.m(changing AppDelegate.m to AppDelegate.mm)cuz .mm inluding c/c++/oc
 //  AngryBirds
 //
 //  Created by xumeng on 17/5/2.
@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "cocos2d/cocos2d.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+  
+    
+    
     return YES;
 }
 

@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "927BF61152046897AE18C9F50F7C4B9EB3CB6744",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BC2AB06997720A016323C7919B01EE36E5BB4297" : 9223372036854775807,
+    "5D7004AFA0F8477414D2D2070527EE503A955943" : 9223372036854775807,
+    "65E71B0513DBFB09F39CEEF3A8B769CB93E66994" : 9223372036854775807,
+    "927BF61152046897AE18C9F50F7C4B9EB3CB6744" : 9223372036854775807,
+    "9737A059EB4BD58811631A38AD2B82FB29A813BD" : 9223372036854775807,
+    "A21E964CF35F95307B1FB121F2B5F3025ACF2ED9" : 9223372036854775807,
+    "999D2B244F4BEADDDD09CD5EE2574031B24F399A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EAA3AE37-464B-4C89-B9B8-95A5F8F8C526",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BC2AB06997720A016323C7919B01EE36E5BB4297" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/ogg",
+    "5D7004AFA0F8477414D2D2070527EE503A955943" : "..\/..\/libs\/cocos2d-objc",
+    "65E71B0513DBFB09F39CEEF3A8B769CB93E66994" : "..\/..\/libs\/cocos2d-objc\/external\/SSZipArchive",
+    "927BF61152046897AE18C9F50F7C4B9EB3CB6744" : "p08-xu\/",
+    "9737A059EB4BD58811631A38AD2B82FB29A813BD" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/tremor",
+    "A21E964CF35F95307B1FB121F2B5F3025ACF2ED9" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL",
+    "999D2B244F4BEADDDD09CD5EE2574031B24F399A" : "..\/..\/libs\/cocos2d-objc\/external\/Chipmunk"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AngryBirds",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AngryBirds\/AngryBirds.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cocos2d\/cocos2d-objc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D7004AFA0F8477414D2D2070527EE503A955943"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/spritebuilder\/ssziparchive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "65E71B0513DBFB09F39CEEF3A8B769CB93E66994"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/mxu24\/p08-xu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "927BF61152046897AE18C9F50F7C4B9EB3CB6744"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/spritebuilder\/tremor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9737A059EB4BD58811631A38AD2B82FB29A813BD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/slembcke\/Chipmunk2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "999D2B244F4BEADDDD09CD5EE2574031B24F399A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/spritebuilder\/ObjectAL-for-Cocos2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A21E964CF35F95307B1FB121F2B5F3025ACF2ED9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/spritebuilder\/ogg.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC2AB06997720A016323C7919B01EE36E5BB4297"
+    }
+  ]
+}

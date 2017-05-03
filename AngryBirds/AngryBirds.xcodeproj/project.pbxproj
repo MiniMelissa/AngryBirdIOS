@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B96E0DF1EB90A6D009BF89E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0DE1EB90A6D009BF89E /* main.m */; };
-		7B96E0E21EB90A6D009BF89E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E11EB90A6D009BF89E /* AppDelegate.m */; };
+		7B96E0E21EB90A6D009BF89E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */; };
 		7B96E0E51EB90A6D009BF89E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E41EB90A6D009BF89E /* ViewController.m */; };
 		7B96E0E81EB90A6D009BF89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B96E0E61EB90A6D009BF89E /* Main.storyboard */; };
 		7B96E0EB1EB90A6D009BF89E /* AngryBirds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E91EB90A6D009BF89E /* AngryBirds.xcdatamodeld */; };
@@ -16,6 +16,27 @@
 		7B96E0F01EB90A6D009BF89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B96E0EE1EB90A6D009BF89E /* LaunchScreen.storyboard */; };
 		7B96E0FB1EB90A6D009BF89E /* AngryBirdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0FA1EB90A6D009BF89E /* AngryBirdsTests.m */; };
 		7B96E1061EB90A6D009BF89E /* AngryBirdsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E1051EB90A6D009BF89E /* AngryBirdsUITests.m */; };
+		7BD3EEDF1EBA6FF500A27A54 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDA1EBA6FF500A27A54 /* AudioToolbox.framework */; };
+		7BD3EEE01EBA6FF500A27A54 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDB1EBA6FF500A27A54 /* AVFoundation.framework */; };
+		7BD3EEE11EBA6FF500A27A54 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDC1EBA6FF500A27A54 /* OpenAL.framework */; };
+		7BD3EEE21EBA6FF500A27A54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDD1EBA6FF500A27A54 /* OpenGLES.framework */; };
+		7BD3EEE31EBA6FF500A27A54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */; };
+		7BD3EEE51EBA735600A27A54 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEE41EBA735600A27A54 /* libz.1.dylib */; };
+		7BD3EEEB1EBA744400A27A54 /* 1.data in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEE91EBA744400A27A54 /* 1.data */; };
+		7BD3EEEC1EBA744400A27A54 /* 2.data in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEEA1EBA744400A27A54 /* 2.data */; };
+		7BD3EEFA1EBA745A00A27A54 /* Box2D in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEED1EBA745A00A27A54 /* Box2D */; };
+		7BD3EEFB1EBA745A00A27A54 /* cocos2d in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEEE1EBA745A00A27A54 /* cocos2d */; };
+		7BD3EEFC1EBA745A00A27A54 /* CocosDenshion in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEEF1EBA745A00A27A54 /* CocosDenshion */; };
+		7BD3EEFD1EBA745A00A27A54 /* cocoslive in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF01EBA745A00A27A54 /* cocoslive */; };
+		7BD3EEFE1EBA745A00A27A54 /* FontLabel in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF11EBA745A00A27A54 /* FontLabel */; };
+		7BD3EEFF1EBA745A00A27A54 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF21EBA745A00A27A54 /* Fonts */; };
+		7BD3EF001EBA745A00A27A54 /* LICENSE_Box2D.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF31EBA745A00A27A54 /* LICENSE_Box2D.txt */; };
+		7BD3EF011EBA745A00A27A54 /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF41EBA745A00A27A54 /* LICENSE_cocos2d.txt */; };
+		7BD3EF021EBA745A00A27A54 /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF51EBA745A00A27A54 /* LICENSE_CocosDenshion.txt */; };
+		7BD3EF031EBA745A00A27A54 /* LICENSE_FontLabel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF61EBA745A00A27A54 /* LICENSE_FontLabel.txt */; };
+		7BD3EF041EBA745A00A27A54 /* LICENSE_TouchJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF71EBA745A00A27A54 /* LICENSE_TouchJSON.txt */; };
+		7BD3EF051EBA745A00A27A54 /* SBJson in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF81EBA745A00A27A54 /* SBJson */; };
+		7BD3EF061EBA745A00A27A54 /* TouchJSON in Resources */ = {isa = PBXBuildFile; fileRef = 7BD3EEF91EBA745A00A27A54 /* TouchJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +60,7 @@
 		7B96E0DA1EB90A6D009BF89E /* AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E0DE1EB90A6D009BF89E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B96E0E01EB90A6D009BF89E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7B96E0E11EB90A6D009BF89E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		7B96E0E31EB90A6D009BF89E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7B96E0E41EB90A6D009BF89E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B96E0E71EB90A6D009BF89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +74,27 @@
 		7B96E1011EB90A6D009BF89E /* AngryBirdsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngryBirdsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E1051EB90A6D009BF89E /* AngryBirdsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AngryBirdsUITests.m; sourceTree = "<group>"; };
 		7B96E1071EB90A6D009BF89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BD3EEDA1EBA6FF500A27A54 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7BD3EEDB1EBA6FF500A27A54 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7BD3EEDC1EBA6FF500A27A54 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		7BD3EEDD1EBA6FF500A27A54 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7BD3EEE41EBA735600A27A54 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		7BD3EEE91EBA744400A27A54 /* 1.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.data; path = Level/1.data; sourceTree = "<group>"; };
+		7BD3EEEA1EBA744400A27A54 /* 2.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 2.data; path = Level/2.data; sourceTree = "<group>"; };
+		7BD3EEED1EBA745A00A27A54 /* Box2D */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Box2D; path = libs/Box2D; sourceTree = "<group>"; };
+		7BD3EEEE1EBA745A00A27A54 /* cocos2d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocos2d; path = libs/cocos2d; sourceTree = "<group>"; };
+		7BD3EEEF1EBA745A00A27A54 /* CocosDenshion */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CocosDenshion; path = libs/CocosDenshion; sourceTree = "<group>"; };
+		7BD3EEF01EBA745A00A27A54 /* cocoslive */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocoslive; path = libs/cocoslive; sourceTree = "<group>"; };
+		7BD3EEF11EBA745A00A27A54 /* FontLabel */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FontLabel; path = libs/FontLabel; sourceTree = "<group>"; };
+		7BD3EEF21EBA745A00A27A54 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = libs/Fonts; sourceTree = "<group>"; };
+		7BD3EEF31EBA745A00A27A54 /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
+		7BD3EEF41EBA745A00A27A54 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_cocos2d.txt; path = libs/LICENSE_cocos2d.txt; sourceTree = "<group>"; };
+		7BD3EEF51EBA745A00A27A54 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_CocosDenshion.txt; path = libs/LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
+		7BD3EEF61EBA745A00A27A54 /* LICENSE_FontLabel.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_FontLabel.txt; path = libs/LICENSE_FontLabel.txt; sourceTree = "<group>"; };
+		7BD3EEF71EBA745A00A27A54 /* LICENSE_TouchJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_TouchJSON.txt; path = libs/LICENSE_TouchJSON.txt; sourceTree = "<group>"; };
+		7BD3EEF81EBA745A00A27A54 /* SBJson */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SBJson; path = libs/SBJson; sourceTree = "<group>"; };
+		7BD3EEF91EBA745A00A27A54 /* TouchJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TouchJSON; path = libs/TouchJSON; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +102,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD3EEE51EBA735600A27A54 /* libz.1.dylib in Frameworks */,
+				7BD3EEDF1EBA6FF500A27A54 /* AudioToolbox.framework in Frameworks */,
+				7BD3EEE01EBA6FF500A27A54 /* AVFoundation.framework in Frameworks */,
+				7BD3EEE11EBA6FF500A27A54 /* OpenAL.framework in Frameworks */,
+				7BD3EEE21EBA6FF500A27A54 /* OpenGLES.framework in Frameworks */,
+				7BD3EEE31EBA6FF500A27A54 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +131,13 @@
 		7B96E0D11EB90A6D009BF89E = {
 			isa = PBXGroup;
 			children = (
+				7BD3EEE81EBA743300A27A54 /* level */,
+				7BD3EEC31EBA4B0000A27A54 /* libs */,
 				7B96E0DC1EB90A6D009BF89E /* AngryBirds */,
 				7B96E0F91EB90A6D009BF89E /* AngryBirdsTests */,
 				7B96E1041EB90A6D009BF89E /* AngryBirdsUITests */,
 				7B96E0DB1EB90A6D009BF89E /* Products */,
+				7BD3EED91EBA6FF500A27A54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7B96E0E01EB90A6D009BF89E /* AppDelegate.h */,
-				7B96E0E11EB90A6D009BF89E /* AppDelegate.m */,
+				7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */,
 				7B96E0E31EB90A6D009BF89E /* ViewController.h */,
 				7B96E0E41EB90A6D009BF89E /* ViewController.m */,
 				7B96E0E61EB90A6D009BF89E /* Main.storyboard */,
@@ -141,6 +192,48 @@
 				7B96E1071EB90A6D009BF89E /* Info.plist */,
 			);
 			path = AngryBirdsUITests;
+			sourceTree = "<group>";
+		};
+		7BD3EEC31EBA4B0000A27A54 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				7BD3EEED1EBA745A00A27A54 /* Box2D */,
+				7BD3EEEE1EBA745A00A27A54 /* cocos2d */,
+				7BD3EEEF1EBA745A00A27A54 /* CocosDenshion */,
+				7BD3EEF01EBA745A00A27A54 /* cocoslive */,
+				7BD3EEF11EBA745A00A27A54 /* FontLabel */,
+				7BD3EEF21EBA745A00A27A54 /* Fonts */,
+				7BD3EEF31EBA745A00A27A54 /* LICENSE_Box2D.txt */,
+				7BD3EEF41EBA745A00A27A54 /* LICENSE_cocos2d.txt */,
+				7BD3EEF51EBA745A00A27A54 /* LICENSE_CocosDenshion.txt */,
+				7BD3EEF61EBA745A00A27A54 /* LICENSE_FontLabel.txt */,
+				7BD3EEF71EBA745A00A27A54 /* LICENSE_TouchJSON.txt */,
+				7BD3EEF81EBA745A00A27A54 /* SBJson */,
+				7BD3EEF91EBA745A00A27A54 /* TouchJSON */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		7BD3EED91EBA6FF500A27A54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BD3EEE41EBA735600A27A54 /* libz.1.dylib */,
+				7BD3EEDA1EBA6FF500A27A54 /* AudioToolbox.framework */,
+				7BD3EEDB1EBA6FF500A27A54 /* AVFoundation.framework */,
+				7BD3EEDC1EBA6FF500A27A54 /* OpenAL.framework */,
+				7BD3EEDD1EBA6FF500A27A54 /* OpenGLES.framework */,
+				7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BD3EEE81EBA743300A27A54 /* level */ = {
+			isa = PBXGroup;
+			children = (
+				7BD3EEE91EBA744400A27A54 /* 1.data */,
+				7BD3EEEA1EBA744400A27A54 /* 2.data */,
+			);
+			name = level;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +345,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD3EEFF1EBA745A00A27A54 /* Fonts in Resources */,
+				7BD3EEFD1EBA745A00A27A54 /* cocoslive in Resources */,
+				7BD3EF041EBA745A00A27A54 /* LICENSE_TouchJSON.txt in Resources */,
+				7BD3EF051EBA745A00A27A54 /* SBJson in Resources */,
+				7BD3EEFA1EBA745A00A27A54 /* Box2D in Resources */,
+				7BD3EF011EBA745A00A27A54 /* LICENSE_cocos2d.txt in Resources */,
+				7BD3EF061EBA745A00A27A54 /* TouchJSON in Resources */,
+				7BD3EEEC1EBA744400A27A54 /* 2.data in Resources */,
 				7B96E0F01EB90A6D009BF89E /* LaunchScreen.storyboard in Resources */,
+				7BD3EF021EBA745A00A27A54 /* LICENSE_CocosDenshion.txt in Resources */,
 				7B96E0ED1EB90A6D009BF89E /* Assets.xcassets in Resources */,
+				7BD3EEFC1EBA745A00A27A54 /* CocosDenshion in Resources */,
+				7BD3EF031EBA745A00A27A54 /* LICENSE_FontLabel.txt in Resources */,
+				7BD3EEFB1EBA745A00A27A54 /* cocos2d in Resources */,
+				7BD3EF001EBA745A00A27A54 /* LICENSE_Box2D.txt in Resources */,
 				7B96E0E81EB90A6D009BF89E /* Main.storyboard in Resources */,
+				7BD3EEFE1EBA745A00A27A54 /* FontLabel in Resources */,
+				7BD3EEEB1EBA744400A27A54 /* 1.data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +389,7 @@
 			files = (
 				7B96E0EB1EB90A6D009BF89E /* AngryBirds.xcdatamodeld in Sources */,
 				7B96E0E51EB90A6D009BF89E /* ViewController.m in Sources */,
-				7B96E0E21EB90A6D009BF89E /* AppDelegate.m in Sources */,
+				7B96E0E21EB90A6D009BF89E /* AppDelegate.mm in Sources */,
 				7B96E0DF1EB90A6D009BF89E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,24 +536,28 @@
 		7B96E10B1EB90A6D009BF89E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K52W7656E6;
 				INFOPLIST_FILE = AngryBirds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xumeng.AngryBirds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/libs";
 			};
 			name = Debug;
 		};
 		7B96E10C1EB90A6D009BF89E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K52W7656E6;
 				INFOPLIST_FILE = AngryBirds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xumeng.AngryBirds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/libs";
 			};
 			name = Release;
 		};
@@ -518,6 +630,7 @@
 				7B96E10C1EB90A6D009BF89E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B96E10D1EB90A6D009BF89E /* Build configuration list for PBXNativeTarget "AngryBirdsTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +639,7 @@
 				7B96E10F1EB90A6D009BF89E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B96E1101EB90A6D009BF89E /* Build configuration list for PBXNativeTarget "AngryBirdsUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +648,7 @@
 				7B96E1121EB90A6D009BF89E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
