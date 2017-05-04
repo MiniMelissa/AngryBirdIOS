@@ -308,6 +308,8 @@
 		7BE875571EBBA20D0057195C /* yumao3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE874EE1EBBA20D0057195C /* yumao3.png */; };
 		7BE8755B1EBBA28A0057195C /* 1.data in Resources */ = {isa = PBXBuildFile; fileRef = 7BE875591EBBA28A0057195C /* 1.data */; };
 		7BE8755C1EBBA28A0057195C /* 2.data in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8755A1EBBA28A0057195C /* 2.data */; };
+		7BE875601EBBADF50057195C /* LoadingScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8755F1EBBADF50057195C /* LoadingScene.mm */; };
+		7BE875641EBBB6D30057195C /* loadingScene.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE875631EBBB6D30057195C /* loadingScene.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -796,6 +798,9 @@
 		7BE874EE1EBBA20D0057195C /* yumao3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yumao3.png; path = Images/yumao3.png; sourceTree = "<group>"; };
 		7BE875591EBBA28A0057195C /* 1.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.data; path = Level/1.data; sourceTree = "<group>"; };
 		7BE8755A1EBBA28A0057195C /* 2.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 2.data; path = Level/2.data; sourceTree = "<group>"; };
+		7BE8755E1EBBADF50057195C /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
+		7BE8755F1EBBADF50057195C /* LoadingScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoadingScene.mm; sourceTree = "<group>"; };
+		7BE875631EBBB6D30057195C /* loadingScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loadingScene.png; path = Images/loadingScene.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -858,6 +863,7 @@
 		7B96E0DC1EB90A6D009BF89E /* AngryBirds */ = {
 			isa = PBXGroup;
 			children = (
+				7BE8755D1EBBADCA0057195C /* scene */,
 				7B96E0E01EB90A6D009BF89E /* AppDelegate.h */,
 				7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */,
 				7B96E0E31EB90A6D009BF89E /* ViewController.h */,
@@ -1427,6 +1433,7 @@
 		7BE874851EBBA1CB0057195C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7BE875631EBBB6D30057195C /* loadingScene.png */,
 				7BE874861EBBA20C0057195C /* 1.png */,
 				7BE874871EBBA20C0057195C /* 2.png */,
 				7BE874881EBBA20C0057195C /* 3.png */,
@@ -1543,6 +1550,15 @@
 				7BE8755A1EBBA28A0057195C /* 2.data */,
 			);
 			name = Level;
+			sourceTree = "<group>";
+		};
+		7BE8755D1EBBADCA0057195C /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				7BE8755E1EBBADF50057195C /* LoadingScene.h */,
+				7BE8755F1EBBADF50057195C /* LoadingScene.mm */,
+			);
+			name = scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1680,6 +1696,7 @@
 				7BE875491EBBA20D0057195C /* stone2.png in Resources */,
 				7BE875391EBBA20D0057195C /* shelf4.png in Resources */,
 				7BE875361EBBA20D0057195C /* shelf1.png in Resources */,
+				7BE875641EBBB6D30057195C /* loadingScene.png in Resources */,
 				7BE8745E1EBBA1230057195C /* fps_images-hd.png in Resources */,
 				7BE874F01EBBA20D0057195C /* 2.png in Resources */,
 				7BE8746C1EBBA1230057195C /* tuffy_bold_italic-charmap-hd.png in Resources */,
@@ -1897,6 +1914,7 @@
 				7BE8743D1EBBA1230057195C /* CCProfiling.m in Sources */,
 				7BE873DA1EBBA1220057195C /* b2TimeOfImpact.cpp in Sources */,
 				7BE874781EBBA1230057195C /* SBJsonStreamParserState.m in Sources */,
+				7BE875601EBBADF50057195C /* LoadingScene.mm in Sources */,
 				7BE873D41EBBA1220057195C /* b2BroadPhase.cpp in Sources */,
 				7BE874311EBBA1230057195C /* CCTouchDispatcher.m in Sources */,
 				7BE873FB1EBBA1220057195C /* CCActionGrid3D.m in Sources */,

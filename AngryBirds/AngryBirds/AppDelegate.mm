@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "cocos2d.h"
 #import "ViewController.h"
+#import "LoadingScene.h"
 
 @interface AppDelegate ()
 
@@ -50,6 +51,10 @@
     [rootview  release];
     [self.window makeKeyAndVisible];
 
+    //display a scene
+    CCScene * sc= [LoadingScene node];
+    //director run scene
+    [[CCDirector sharedDirector] runWithScene:sc];
     
     return YES;
 }
