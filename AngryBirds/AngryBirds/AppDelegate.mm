@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "cocos2d/cocos2d.h"
+#import "cocos2d.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -19,9 +19,37 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   // kCCDirectorTypeDefault
     
-  
+    //we set director type as kCCDirectorTypeDisplayLink, yes:set successfully,No:set as kCCDirectorTypeDefault
+    if(![CCDirector setDirectorType:kCCDirectorTypeDisplayLink]){
+        [CCDirector setDirectorType:kCCDirectorTypeDefault];
+    }
     
+    //get direct, singleton pattern, use this direct to controll the whole game
+    CCDirector* direct =[CCDirector sharedDirector];
+    
+    //create a UIView, it has OpenGL ES feature
+    //kEAGLColorFormatRGB565 2G
+    EAGLView *eaglView=[EAGLView viewWithFrame:[self.window bounds] pixelFormat:kEAGLColorFormatRGB565 depthFormat:0];
+    //set this UIView connected with director
+    [direct setOpenGLView:eaglView];
+    
+    //set game direction as left,if we dont commen this line, the value of display on the left-up  corner
+//    [direct setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+    
+    // refresh animation 60 times/min
+    [direct setAnimationInterval:1.0f/60.0f];
+    //for debugging purpose, display current refresh speed
+    [direct setDisplayFPS:YES];
+    
+    //set rootview as root
+    ViewController *rootview=[[ViewController alloc]init];
+    [rootview setView:eaglView];
+    [self.window setRootViewController:rootview];
+    [rootview  release];
+    [self.window makeKeyAndVisible];
+
     
     return YES;
 }
@@ -30,22 +58,35 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+   
+    //pasue game
+    [[CCDirector sharedDirector] pause];
+    
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    //stop animation and refresh
+    [[CCDirector sharedDirector] stopAnimation];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    //start animation
+    [[CCDirector sharedDirector]startAnimation];
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    //re-run
+    [[CCDirector sharedDirector] resume];
 }
 
 
@@ -53,6 +94,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    
+    //we can not complete this part in this game
+    CCDirector* director=[CCDirector sharedDirector];
+    [[director openGLView] removeFromSuperview];
+    [self.window release];
+    [director end];
+    
 }
 
 

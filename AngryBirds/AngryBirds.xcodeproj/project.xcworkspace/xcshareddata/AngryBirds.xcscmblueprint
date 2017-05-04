@@ -14,11 +14,11 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EAA3AE37-464B-4C89-B9B8-95A5F8F8C526",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "BC2AB06997720A016323C7919B01EE36E5BB4297" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/ogg",
+    "BC2AB06997720A016323C7919B01EE36E5BB4297" : "p08-xu\/AngryBirds\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/ogg\/",
     "5D7004AFA0F8477414D2D2070527EE503A955943" : "..\/..\/libs\/cocos2d-objc",
     "65E71B0513DBFB09F39CEEF3A8B769CB93E66994" : "..\/..\/libs\/cocos2d-objc\/external\/SSZipArchive",
     "927BF61152046897AE18C9F50F7C4B9EB3CB6744" : "p08-xu\/",
-    "9737A059EB4BD58811631A38AD2B82FB29A813BD" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/tremor",
+    "9737A059EB4BD58811631A38AD2B82FB29A813BD" : "p08-xu\/AngryBirds\/libs\/cocos2d-objc\/external\/ObjectAL\/external\/tremor\/",
     "A21E964CF35F95307B1FB121F2B5F3025ACF2ED9" : "..\/..\/libs\/cocos2d-objc\/external\/ObjectAL",
     "999D2B244F4BEADDDD09CD5EE2574031B24F399A" : "..\/..\/libs\/cocos2d-objc\/external\/Chipmunk"
   },
