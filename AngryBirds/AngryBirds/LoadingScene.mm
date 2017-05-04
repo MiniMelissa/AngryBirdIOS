@@ -78,6 +78,9 @@
         [self unscheduleAllSelectors];
         
         //transfer to another scene
+        CCScene *cs =[StartScene scene];
+        //desctroy original scene, run a new scene-cs
+        [[CCDirector sharedDirector] replaceScene:cs];
     }
 }
 

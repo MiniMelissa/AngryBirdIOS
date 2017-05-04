@@ -310,6 +310,7 @@
 		7BE8755C1EBBA28A0057195C /* 2.data in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8755A1EBBA28A0057195C /* 2.data */; };
 		7BE875601EBBADF50057195C /* LoadingScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8755F1EBBADF50057195C /* LoadingScene.mm */; };
 		7BE875641EBBB6D30057195C /* loadingScene.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE875631EBBB6D30057195C /* loadingScene.png */; };
+		7BE875671EBBDA0F0057195C /* StartScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE875661EBBDA0F0057195C /* StartScene.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -801,6 +802,8 @@
 		7BE8755E1EBBADF50057195C /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
 		7BE8755F1EBBADF50057195C /* LoadingScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoadingScene.mm; sourceTree = "<group>"; };
 		7BE875631EBBB6D30057195C /* loadingScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loadingScene.png; path = Images/loadingScene.png; sourceTree = "<group>"; };
+		7BE875651EBBDA0F0057195C /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		7BE875661EBBDA0F0057195C /* StartScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StartScene.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1557,6 +1560,8 @@
 			children = (
 				7BE8755E1EBBADF50057195C /* LoadingScene.h */,
 				7BE8755F1EBBADF50057195C /* LoadingScene.mm */,
+				7BE875651EBBDA0F0057195C /* StartScene.h */,
+				7BE875661EBBDA0F0057195C /* StartScene.mm */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -1902,6 +1907,7 @@
 				7BE873DD1EBBA1220057195C /* b2BlockAllocator.cpp in Sources */,
 				7BE874231EBBA1230057195C /* CCTexture2D.m in Sources */,
 				7BE873DB1EBBA1220057195C /* b2CircleShape.cpp in Sources */,
+				7BE875671EBBDA0F0057195C /* StartScene.mm in Sources */,
 				7BE874091EBBA1230057195C /* CCDirector.m in Sources */,
 				7BE8747D1EBBA1230057195C /* SBJsonUTF8Stream.m in Sources */,
 				7BE874821EBBA1230057195C /* CJSONDeserializer.m in Sources */,

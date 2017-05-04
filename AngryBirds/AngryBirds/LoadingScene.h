@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
+#import "StartScene.h"
 
 @interface LoadingScene : CCLayer{
     //define a 展示字符串的对象
