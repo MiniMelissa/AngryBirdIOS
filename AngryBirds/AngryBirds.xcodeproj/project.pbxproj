@@ -24,6 +24,7 @@
 		7BD3EEE51EBA735600A27A54 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEE41EBA735600A27A54 /* libz.1.dylib */; };
 		7BE40A541EBCD02900385866 /* ParticalManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A531EBCD02900385866 /* ParticalManager.mm */; };
 		7BE40A571EBCF49500385866 /* LevelScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A561EBCF49500385866 /* LevelScene.mm */; };
+		7BE40A5A1EBD2C8F00385866 /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A591EBD2C8F00385866 /* GameUtils.mm */; };
 		7BE8726C1EBB9D870057195C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726B1EBB9D870057195C /* UIKit.framework */; };
 		7BE8726E1EBB9D980057195C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726D1EBB9D980057195C /* Foundation.framework */; };
 		7BE873D41EBBA1220057195C /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BE872731EBBA1220057195C /* b2BroadPhase.cpp */; };
@@ -360,6 +361,8 @@
 		7BE40A531EBCD02900385866 /* ParticalManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParticalManager.mm; sourceTree = "<group>"; };
 		7BE40A551EBCF49500385866 /* LevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelScene.h; sourceTree = "<group>"; };
 		7BE40A561EBCF49500385866 /* LevelScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelScene.mm; sourceTree = "<group>"; };
+		7BE40A581EBD2C8F00385866 /* GameUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUtils.h; sourceTree = "<group>"; };
+		7BE40A591EBD2C8F00385866 /* GameUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameUtils.mm; sourceTree = "<group>"; };
 		7BE8726B1EBB9D870057195C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BE8726D1EBB9D980057195C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE872711EBBA1220057195C /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -934,6 +937,8 @@
 			children = (
 				7BE40A521EBCD02900385866 /* ParticalManager.h */,
 				7BE40A531EBCD02900385866 /* ParticalManager.mm */,
+				7BE40A581EBD2C8F00385866 /* GameUtils.h */,
+				7BE40A591EBD2C8F00385866 /* GameUtils.mm */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1985,6 +1990,7 @@
 				7BE873E21EBBA1220057195C /* b2ContactManager.cpp in Sources */,
 				7BE873E81EBBA1220057195C /* b2Contact.cpp in Sources */,
 				7BE874071EBBA1220057195C /* CCCamera.m in Sources */,
+				7BE40A5A1EBD2C8F00385866 /* GameUtils.mm in Sources */,
 				7BE874041EBBA1220057195C /* CCAnimationCache.m in Sources */,
 				7BE874771EBBA1230057195C /* SBJsonStreamParserAdapter.m in Sources */,
 				7BE873ED1EBBA1220057195C /* b2DistanceJoint.cpp in Sources */,
