@@ -49,7 +49,7 @@ static ParticalManager* s;
             //after finishing explosion, remove
             [sys setAutoRemoveOnFinish:YES];
         }
-            
+            break;
         default:
             break;
     }

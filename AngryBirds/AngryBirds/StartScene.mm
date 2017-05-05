@@ -8,6 +8,7 @@
 
 #import "StartScene.h"
 #import "ParticalManager.h"
+#import "LevelScene.h"
 
 @implementation StartScene
 
@@ -65,8 +66,31 @@
     return self;
 }
 
--(void)startGame:(id) arg{
+-(void)startGame:(id)arg{
     NSLog(@"game begin!");
+    //start levelscene
+    CCScene* level=[LevelScene scene];
+    
+    //give 5s to do splitcol transition to level
+    //1.分竖条
+//        CCTransitionScene* transScene=[[CCTransitionSplitCols alloc] initWithDuration:3.0f scene:level];
+    //2.分横条
+    CCTransitionScene* transScene=[[CCTransitionSplitRows alloc] initWithDuration:3.0f scene:level];
+    //3.雷达
+//    CCTransitionScene* transScene=[[CCTransitionRadialCCW alloc] initWithDuration:3.0f scene:level];
+    //4.小格子
+//    CCTransitionScene* transScene=[[CCTransitionTurnOffTiles alloc] initWithDuration:3.0f scene:level];
+    //5.below 上下左右滑动
+//    CCTransitionScene* transScene=[[CCTransitionSlideInB alloc] initWithDuration:3.0f scene:level];
+    //6。
+//        CCTransitionScene* transScene=[[CCTransitionFlipX alloc] initWithDuration:3.0f scene:level];
+    //7.左上右下轴翻转
+//        CCTransitionScene* transScene=[[CCTransitionZoomFlipAngular alloc] initWithDuration:3.0f scene:level];
+
+    //director transfer to animation scene
+    [[CCDirector sharedDirector] replaceScene:transScene];
+    [transScene release];
+    
 }
 
 -(void)tick:(double)dt{

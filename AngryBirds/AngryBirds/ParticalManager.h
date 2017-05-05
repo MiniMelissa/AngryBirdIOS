@@ -6,7 +6,7 @@
 //  Copyright © 2017年 xumeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
 //define 2 kinds of partical effect
@@ -15,6 +15,7 @@ typedef enum{
     ParticalBirdExplosion,
     ParticalMax
 }ParticalType;
+
 @interface ParticalManager : NSObject
 //singleton ,get the only one object
 +(id) sharedParticalManager;
