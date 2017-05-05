@@ -22,6 +22,7 @@
 		7BD3EEE21EBA6FF500A27A54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDD1EBA6FF500A27A54 /* OpenGLES.framework */; };
 		7BD3EEE31EBA6FF500A27A54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */; };
 		7BD3EEE51EBA735600A27A54 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEE41EBA735600A27A54 /* libz.1.dylib */; };
+		7BE40A541EBCD02900385866 /* ParticalManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A531EBCD02900385866 /* ParticalManager.mm */; };
 		7BE8726C1EBB9D870057195C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726B1EBB9D870057195C /* UIKit.framework */; };
 		7BE8726E1EBB9D980057195C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726D1EBB9D980057195C /* Foundation.framework */; };
 		7BE873D41EBBA1220057195C /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BE872731EBBA1220057195C /* b2BroadPhase.cpp */; };
@@ -354,6 +355,8 @@
 		7BD3EEDD1EBA6FF500A27A54 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7BD3EEE41EBA735600A27A54 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		7BE40A521EBCD02900385866 /* ParticalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticalManager.h; sourceTree = "<group>"; };
+		7BE40A531EBCD02900385866 /* ParticalManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParticalManager.mm; sourceTree = "<group>"; };
 		7BE8726B1EBB9D870057195C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BE8726D1EBB9D980057195C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE872711EBBA1220057195C /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -866,6 +869,7 @@
 		7B96E0DC1EB90A6D009BF89E /* AngryBirds */ = {
 			isa = PBXGroup;
 			children = (
+				7BE40A511EBCD01300385866 /* utils */,
 				7BE8755D1EBBADCA0057195C /* scene */,
 				7B96E0E01EB90A6D009BF89E /* AppDelegate.h */,
 				7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */,
@@ -920,6 +924,15 @@
 				7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BE40A511EBCD01300385866 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7BE40A521EBCD02900385866 /* ParticalManager.h */,
+				7BE40A531EBCD02900385866 /* ParticalManager.mm */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		7BE8726F1EBBA0DB0057195C /* libs */ = {
@@ -1981,6 +1994,7 @@
 				7BE873F41EBBA1220057195C /* b2PulleyJoint.cpp in Sources */,
 				7BE8744D1EBBA1230057195C /* ZAttributedString.m in Sources */,
 				7BE8742E1EBBA1230057195C /* CCTransitionRadial.m in Sources */,
+				7BE40A541EBCD02900385866 /* ParticalManager.mm in Sources */,
 				7BE874291EBBA1230057195C /* CCTMXObjectGroup.m in Sources */,
 				7BE874011EBBA1220057195C /* CCActionTiledGrid.m in Sources */,
 				7BE874251EBBA1230057195C /* CCTextureCache.m in Sources */,

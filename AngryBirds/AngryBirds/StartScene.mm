@@ -7,6 +7,7 @@
 //
 
 #import "StartScene.h"
+#import "ParticalManager.h"
 
 @implementation StartScene
 
@@ -55,6 +56,11 @@
         
         //加定时器.run tick every second
         [self schedule:@selector(tick:) interval:1.0f];
+        
+        
+        //add snow partical
+        CCParticleSystem* snow=[[ParticalManager sharedParticalManager] particalWithType:ParticalSnow];
+        [self addChild:snow];
     }
     return self;
 }
@@ -93,6 +99,12 @@
 }
 
 -(void)finishAction:(CCNode*) curNode{
+    //add bird explosion
+    CCParticleSystem* birdExplosion=[[ParticalManager  sharedParticalManager]particalWithType:ParticalBirdExplosion];
+    //keep the position of bird and the position of birdExplosion same
+    [birdExplosion setPosition:[curNode position]];
+    [self addChild:birdExplosion];
+    
     //once call this method, action finished; curNode is bird,just remove curNode
     //either method below is ok;
     //[self removeChild:curNode cleanup:YES];
