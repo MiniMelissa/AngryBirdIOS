@@ -8,6 +8,7 @@
 
 #import "LevelScene.h"
 #import "GameUtils.h"
+#import "StartScene.h"
 
 @implementation LevelScene
 
@@ -32,7 +33,11 @@
         CCSprite* back=[CCSprite spriteWithFile:@"backarrow.png"];
         back.position=ccp(40.0f,40.0f);
         back.scale=0.5f;
+        back.tag=100;
         [self addChild:back];
+        
+        //set self can be touched, make self accept touch event
+        [self setIsTouchEnabled:YES];
         
         
         //add 14
@@ -64,5 +69,33 @@
     }
     
     return self;
+}
+
+//touch finished touches is the set of touching dots.触摸点集合
+-(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    //get touching dots
+    UITouch *oneFinger=[touches anyObject];
+    //get current touch view, touchView is glView(openGL)
+    UIView* touchView=[oneFinger view];
+    //transfer to world openGL point
+    CGPoint location=[oneFinger locationInView:touchView];
+    //transfer uiview to world location
+    CGPoint worldPoint=[[CCDirector sharedDirector] convertToGL:location];
+    //world point to node point
+    CGPoint nodePoint=[self convertToNodeSpace:worldPoint];
+    
+    //self.childre.count is self 上所有的一层孩子
+    for(int i=0;i<self.children.count;i++ ) {
+        //get the ith sprite
+        CCSprite* one=[self.children objectAtIndex:i];
+        if(CGRectContainsPoint(one.boundingBox, nodePoint)&&one.tag==100){
+            CCScene * cs= [StartScene scene];
+            CCTransitionScene* trans=[[CCTransitionSplitRows alloc]initWithDuration:1.0f scene:cs];
+            [[CCDirector sharedDirector] replaceScene:trans];
+            [trans release];
+        }
+    }
+    
+    
 }
 @end
