@@ -36,9 +36,6 @@
         back.tag=100;
         [self addChild:back];
         
-        //set self can be touched, make self accept touch event
-        [self setIsTouchEnabled:YES];
-        
         
         //add 14
         sucesslevel=[GameUtils readLevelFromFile];
@@ -66,6 +63,8 @@
             level.scale=0.6f;
             [self addChild:level z:1];
         }
+        //set self can be touched, make self accept touch event
+        [self setIsTouchEnabled:YES];
     }
     
     return self;
@@ -86,13 +85,21 @@
     
     //self.childre.count is self 上所有的一层孩子
     for(int i=0;i<self.children.count;i++ ) {
-        //get the ith sprite
+        //get the ith sprite of self
         CCSprite* one=[self.children objectAtIndex:i];
+        //make sure back is in self, tag=100 means it is 100
         if(CGRectContainsPoint(one.boundingBox, nodePoint)&&one.tag==100){
             CCScene * cs= [StartScene scene];
             CCTransitionScene* trans=[[CCTransitionSplitRows alloc]initWithDuration:1.0f scene:cs];
             [[CCDirector sharedDirector] replaceScene:trans];
             [trans release];
+        }
+        else if(CGRectContainsPoint(one.boundingBox, nodePoint)&& one.tag<sucesslevel+1 && one.tag) {
+            NSLog(@"choose %ld\n .",(long)one.tag);
+//            CCScene* cs=[GameScene scene];
+
+            CCScene* cs=[GameScene sceneWithLevel:one.tag];
+            [[CCDirector sharedDirector] replaceScene:cs];
         }
     }
     
