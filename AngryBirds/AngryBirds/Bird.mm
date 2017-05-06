@@ -10,12 +10,18 @@
 
 @implementation Bird
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
+    myLayer=layer;
+    imageURL=@"bird";
+    myWorld=world;
+    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    
+    self.tag=BIRD_ID;
+    self.position=ccp(x, y);
+    HP=10000;
+    self.scale=0.3f;
+    
+    return self;
 }
-*/
 
 @end

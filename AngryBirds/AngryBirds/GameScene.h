@@ -10,6 +10,8 @@
 #import "cocos2d.h"
 #import "SpriteBase.h"
 #import "Bird.h"
+#import "Pig.h"
+#import "Ice.h"
 
 @interface GameScene : CCLayer <SpriteDelegate>
 {

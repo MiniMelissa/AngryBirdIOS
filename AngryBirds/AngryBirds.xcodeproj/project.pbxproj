@@ -29,6 +29,8 @@
 		7BE40A611EBE1E2200385866 /* SpriteBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A601EBE1E2200385866 /* SpriteBase.mm */; };
 		7BE40A641EBE214B00385866 /* Bird.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A631EBE214B00385866 /* Bird.mm */; };
 		7BE40A671EBE23D600385866 /* Pig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A661EBE23D600385866 /* Pig.mm */; };
+		7BE40A6A1EBE704800385866 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A691EBE704800385866 /* JsonParser.m */; };
+		7BE40A6D1EBE769800385866 /* Ice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A6C1EBE769800385866 /* Ice.mm */; };
 		7BE8726C1EBB9D870057195C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726B1EBB9D870057195C /* UIKit.framework */; };
 		7BE8726E1EBB9D980057195C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE8726D1EBB9D980057195C /* Foundation.framework */; };
 		7BE873D41EBBA1220057195C /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BE872731EBBA1220057195C /* b2BroadPhase.cpp */; };
@@ -375,6 +377,10 @@
 		7BE40A631EBE214B00385866 /* Bird.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bird.mm; sourceTree = "<group>"; };
 		7BE40A651EBE23D600385866 /* Pig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pig.h; sourceTree = "<group>"; };
 		7BE40A661EBE23D600385866 /* Pig.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Pig.mm; sourceTree = "<group>"; };
+		7BE40A681EBE704800385866 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		7BE40A691EBE704800385866 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
+		7BE40A6B1EBE769800385866 /* Ice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ice.h; sourceTree = "<group>"; };
+		7BE40A6C1EBE769800385866 /* Ice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Ice.mm; sourceTree = "<group>"; };
 		7BE8726B1EBB9D870057195C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BE8726D1EBB9D980057195C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE872711EBBA1220057195C /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
@@ -952,6 +958,8 @@
 				7BE40A531EBCD02900385866 /* ParticalManager.mm */,
 				7BE40A581EBD2C8F00385866 /* GameUtils.h */,
 				7BE40A591EBD2C8F00385866 /* GameUtils.mm */,
+				7BE40A681EBE704800385866 /* JsonParser.h */,
+				7BE40A691EBE704800385866 /* JsonParser.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -965,6 +973,8 @@
 				7BE40A631EBE214B00385866 /* Bird.mm */,
 				7BE40A651EBE23D600385866 /* Pig.h */,
 				7BE40A661EBE23D600385866 /* Pig.mm */,
+				7BE40A6B1EBE769800385866 /* Ice.h */,
+				7BE40A6C1EBE769800385866 /* Ice.mm */,
 			);
 			name = sprites;
 			sourceTree = "<group>";
@@ -2026,9 +2036,11 @@
 				7BE874771EBBA1230057195C /* SBJsonStreamParserAdapter.m in Sources */,
 				7BE873ED1EBBA1220057195C /* b2DistanceJoint.cpp in Sources */,
 				7BE8742F1EBBA1230057195C /* cocos2d.m in Sources */,
+				7BE40A6D1EBE769800385866 /* Ice.mm in Sources */,
 				7BE874791EBBA1230057195C /* SBJsonStreamWriter.m in Sources */,
 				7BE874321EBBA1230057195C /* CCTouchHandler.m in Sources */,
 				7BE873FA1EBBA1220057195C /* CCActionGrid.m in Sources */,
+				7BE40A6A1EBE704800385866 /* JsonParser.m in Sources */,
 				7BE873D61EBBA1220057195C /* b2CollidePolygon.cpp in Sources */,
 				7BE8743B1EBBA1230057195C /* CCArray.m in Sources */,
 				7BE874181EBBA1230057195C /* CCParticleSystemPoint.m in Sources */,

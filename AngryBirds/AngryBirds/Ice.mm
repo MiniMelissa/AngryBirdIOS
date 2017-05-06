@@ -1,24 +1,24 @@
 //
-//  Pig.m
+//  Ice.m
 //  AngryBirds
 //
 //  Created by xumeng on 17/5/6.
 //  Copyright © 2017年 xumeng. All rights reserved.
 //
 
-#import "Pig.h"
+#import "Ice.h"
 
-@implementation Pig
-
+@implementation Ice
 -(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
     myWorld = world;
-    imageURL = @"pig";
     myLayer = layer;
+    imageURL = @"ice";
     
-    self = [super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    HP = 27;
+    fullHP = HP;
+    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
     self.position = ccp(x, y);
-    self.tag = PIG_ID;
-    HP = 1;
+    self.tag = ICE_ID;
     float scale = 2;
     self.scale = scale/10;
     
