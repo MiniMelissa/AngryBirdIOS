@@ -12,10 +12,12 @@
 
 -(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
     myWorld = world;
-    imageURL = @"pig";
+    imageURL=@"pig";
     myLayer = layer;
     
-    self = [super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+//    self = [super initWithFile:[NSString stringWithFormat:@"pig1.png"]];
+
     self.position = ccp(x, y);
     self.tag = PIG_ID;
     HP = 1;

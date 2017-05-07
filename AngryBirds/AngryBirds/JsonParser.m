@@ -28,6 +28,7 @@
         sm.x=[[dict objectForKey:@"x"]floatValue];
         sm.y=[[dict objectForKey:@"y"]floatValue];
         sm.angle=[[dict objectForKey:@"angle"]floatValue];
+        
         [array addObject:sm];
         [sm release];
     }

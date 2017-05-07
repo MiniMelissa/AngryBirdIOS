@@ -16,12 +16,14 @@
     
     HP = 27;
     fullHP = HP;
-    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+
+//    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
     self.position = ccp(x, y);
     self.tag = ICE_ID;
     float scale = 2;
     self.scale = scale/10;
-    
+
     return self;
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 xumeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "SpriteBase.h"
 
 @interface Pig : SpriteBase
