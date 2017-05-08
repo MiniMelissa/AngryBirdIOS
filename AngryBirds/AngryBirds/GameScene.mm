@@ -8,6 +8,9 @@
 
 #import "GameScene.h"
 
+#define TOUCH_UNKNOW 0
+#define TOUCH_SHOTBIRD 1
+#define SLINGSHOT_POS CGPointMake(85, 125)
 
 @implementation GameScene
 
@@ -46,7 +49,7 @@
         scoreLable.position=ccp(450, 170);
         [self addChild:scoreLable];
         
-        //create slingshot 弹弓
+        //create slingshot 弹弓 5/7/2017
         CCSprite* leftshot=[CCSprite spriteWithFile:@"leftshot.png"];
         leftshot.position=ccp(85, 110);
         [self addChild:leftshot];
@@ -57,19 +60,84 @@
         
         
         slingshot=[[Slingshot alloc]init];
-        slingshot.startPoint1=ccp(82, 230);
+        slingshot.startPoint1=ccp(82, 130);
         slingshot.startPoint2=ccp(92, 128);
-        slingshot.endPoint=ccp(20, 125);
+        slingshot.endPoint=SLINGSHOT_POS;
         slingshot.contentSize=CGSizeMake(480, 320);
         slingshot.position=ccp(240, 160);
         [self addChild:slingshot];
         
         
+        //5/8/2017, we can check the definition of isTouchEnabled
+        self.isTouchEnabled=YES;
+        //add targeted  delegate
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+        
+        
+        //5/6/2017
         [self creatlevel];
 
     }
     
     return self;
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+    //判断touch is among the range of currentBird
+    touchStatus=TOUCH_UNKNOW;
+    
+    //get the touch position on screen
+    CGPoint touchPosition= [self convertTouchToNodeSpace:touch];
+    if(currentBird==nil) return NO;
+    //get the area of current bird
+    CGRect birdRect=currentBird.boundingBox;
+    if(CGRectContainsPoint(birdRect, touchPosition)){
+        touchStatus=TOUCH_SHOTBIRD;
+        return YES;
+    }
+    return NO;
+    
+}
+
+-(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
+    if(touchStatus==TOUCH_SHOTBIRD){
+        //touch bird, we can pull slingshot
+        //get the touch position
+        CGPoint touchPosition=[self convertTouchToNodeSpace:touch];
+        
+        //set the postion of slingshot and bird as the touch position
+        slingshot.endPoint=touchPosition;
+        currentBird.position=touchPosition;
+        
+    }
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+    //放开slingshot,bird fly and slingshot recover
+    if(touchStatus==TOUCH_SHOTBIRD){
+        CGPoint touchPosition=[self convertTouchToNodeSpace:touch];
+        slingshot.endPoint=SLINGSHOT_POS;
+        
+        //calculate the ratio which decide the route bird fly
+        CGFloat r=[self getRatioFromPoint:touchPosition toPoint:SLINGSHOT_POS];
+        CGFloat endx=300;
+        CGFloat endy=endx*r+touchPosition.y;
+        CGPoint desPoint=ccp(endx, endy);
+        CCMoveTo *moveAction=[[CCMoveTo alloc] initWithDuration:1.0f position:desPoint];
+        [currentBird runAction:moveAction];
+        [moveAction release];
+        
+        [birds removeObject:currentBird];
+        currentBird=nil;
+        //make next bird jump to slingshot
+        [self performSelector:@selector(jump) withObject:nil afterDelay:1.0f];
+        
+    }
+}
+
+
+-(CGFloat) getRatioFromPoint:(CGPoint)p1 toPoint: (CGPoint)p2{
+    return (p2.y-p1.y)/(p2.x-p1.x);
 }
 
 -(void)creatlevel{

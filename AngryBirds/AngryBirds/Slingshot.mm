@@ -7,7 +7,6 @@
 //
 
 #import "Slingshot.h"
-
 @implementation Slingshot
 @synthesize startPoint1=_startPoint1,startPoint2=_startPoint2,endPoint=_endPoint;
 

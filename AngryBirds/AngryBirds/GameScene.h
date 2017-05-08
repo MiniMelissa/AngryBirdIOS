@@ -27,6 +27,8 @@
     BOOL gameFinish;
     
     Slingshot* slingshot;
+    int touchStatus;
+    
 }
 +(id) scene;
 //each level
