@@ -16,7 +16,7 @@
     
     HP = 27;
     fullHP = HP;
-    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    self=[super initWithFile:[NSString stringWithFormat:@"%@2.png",imageURL]];
 
 //    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
     self.position = ccp(x, y);

@@ -9,6 +9,7 @@
 #import "Bird.h"
 
 @implementation Bird
+@synthesize isFly=_isFly,isReady=_isReady;
 
 -(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
     myLayer=layer;

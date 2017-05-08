@@ -7,7 +7,7 @@
 //
 
 #import "GameScene.h"
-#import "JsonParser.h"
+
 
 @implementation GameScene
 
@@ -55,6 +55,16 @@
         rightshot.position=ccp(85, 110);
         [self addChild:rightshot];
         
+        
+        slingshot=[[Slingshot alloc]init];
+        slingshot.startPoint1=ccp(82, 230);
+        slingshot.startPoint2=ccp(92, 128);
+        slingshot.endPoint=ccp(20, 125);
+        slingshot.contentSize=CGSizeMake(480, 320);
+        slingshot.position=ccp(240, 160);
+        [self addChild:slingshot];
+        
+        
         [self creatlevel];
 
     }
@@ -64,29 +74,29 @@
 
 -(void)creatlevel{
     NSString *s = [NSString stringWithFormat:@"%d", currentlevel];
-    NSString* path=[[NSBundle mainBundle] pathForResource:s ofType:@"data"];
-    NSLog(@"path: %@",path);
-    NSArray* spArray= [JsonParser getAllSprite:path];
-    NSLog(@"path: %d",(int)spArray.count);
-    b2World * world=NULL;
-    //pig and ice didnt show
-    for(SpriteModel* sm in spArray){
+    NSString *path = [[NSBundle mainBundle] pathForResource:s ofType:@"data"];
+    NSLog(@"path is %@", path);
+    NSArray *spriteArray = [JsonParser getAllSprite:path];
+    NSLog(@"count is : %d",(int)spriteArray.count);
+    b2World* world=NULL;
+    CCSprite *pig=NULL;
+    for (SpriteModel *sm in spriteArray) {
         switch (sm.tag) {
             case PIG_ID:
             {
-                CCSprite* pig=[[Pig alloc]initWithX:sm.x andY:sm.y andWorld:world andLayer:self];
+                pig = [[Pig alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
                 NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
-
                 [self addChild:pig];
+                NSLog(@"PIG: ");
                 [pig release];
                 break;
             }
             case ICE_ID:
             {
-                CCSprite* ice=[[Ice alloc]initWithX:sm.x andY:sm.y andWorld:world andLayer:self];
+                CCSprite *ice = [[Ice alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+                [self addChild:ice];
                 NSLog(@"ICE: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
 
-                [self addChild:ice];
                 [ice release];
                 break;
             }
@@ -94,11 +104,11 @@
                 break;
         }
     }
-//    CCSprite* pig=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
+//    pig=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
 //    NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
     
-//    [self addChild:pig];
-//    [pig release];
+ //   [self addChild:pig];
+ //   [pig release];
     
     //bird can show
     birds= [[NSMutableArray alloc]init];

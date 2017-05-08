@@ -15,8 +15,7 @@
     imageURL=@"pig";
     myLayer = layer;
     
-    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
-//    self = [super initWithFile:[NSString stringWithFormat:@"pig1.png"]];
+    self=[super initWithFile:[NSString stringWithFormat:@"%@2.png",imageURL]];
 
     self.position = ccp(x, y);
     self.tag = PIG_ID;

@@ -6,12 +6,14 @@
 //  Copyright © 2017年 xumeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SpriteBase.h"
+#import "JsonParser.h"
 #import "Bird.h"
 #import "Pig.h"
 #import "Ice.h"
+#import "Slingshot.h"
 
 @interface GameScene : CCLayer <SpriteDelegate>
 {
@@ -23,6 +25,8 @@
     Bird *currentBird;
     BOOL gameStart;
     BOOL gameFinish;
+    
+    Slingshot* slingshot;
 }
 +(id) scene;
 //each level
