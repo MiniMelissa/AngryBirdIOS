@@ -19,4 +19,5 @@
 @property(nonatomic,assign)BOOL isReady;
 
 -(void) setSpeedX:(float)x andY:(float)y andWorld:(b2World*)world;
+-(void)hitAnimationX:(float)x andY:(float)y;
 @end

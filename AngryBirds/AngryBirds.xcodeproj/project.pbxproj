@@ -23,6 +23,7 @@
 		7BD3EEE31EBA6FF500A27A54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEDE1EBA6FF500A27A54 /* QuartzCore.framework */; };
 		7BD3EEE51EBA735600A27A54 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD3EEE41EBA735600A27A54 /* libz.1.dylib */; };
 		7BDA60411EC01C4000ECE366 /* Slingshot.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA60401EC01C4000ECE366 /* Slingshot.mm */; };
+		7BDA60441EC1742C00ECE366 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA60431EC1742C00ECE366 /* ContactListener.mm */; };
 		7BE40A541EBCD02900385866 /* ParticalManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A531EBCD02900385866 /* ParticalManager.mm */; };
 		7BE40A571EBCF49500385866 /* LevelScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A561EBCF49500385866 /* LevelScene.mm */; };
 		7BE40A5A1EBD2C8F00385866 /* GameUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE40A591EBD2C8F00385866 /* GameUtils.mm */; };
@@ -366,6 +367,8 @@
 		7BD3EEE41EBA735600A27A54 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		7BDA603F1EC01C4000ECE366 /* Slingshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slingshot.h; sourceTree = "<group>"; };
 		7BDA60401EC01C4000ECE366 /* Slingshot.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Slingshot.mm; sourceTree = "<group>"; };
+		7BDA60421EC1742C00ECE366 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
+		7BDA60431EC1742C00ECE366 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
 		7BE40A521EBCD02900385866 /* ParticalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticalManager.h; sourceTree = "<group>"; };
 		7BE40A531EBCD02900385866 /* ParticalManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParticalManager.mm; sourceTree = "<group>"; };
 		7BE40A551EBCF49500385866 /* LevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelScene.h; sourceTree = "<group>"; };
@@ -957,10 +960,14 @@
 		7BE40A511EBCD01300385866 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				7BE40A681EBE704800385866 /* JsonParser.h */,
+				7BE40A691EBE704800385866 /* JsonParser.m */,
 				7BE40A521EBCD02900385866 /* ParticalManager.h */,
 				7BE40A531EBCD02900385866 /* ParticalManager.mm */,
 				7BE40A581EBD2C8F00385866 /* GameUtils.h */,
 				7BE40A591EBD2C8F00385866 /* GameUtils.mm */,
+				7BDA60421EC1742C00ECE366 /* ContactListener.h */,
+				7BDA60431EC1742C00ECE366 /* ContactListener.mm */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1618,8 +1625,6 @@
 		7BE8755D1EBBADCA0057195C /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				7BE40A681EBE704800385866 /* JsonParser.h */,
-				7BE40A691EBE704800385866 /* JsonParser.m */,
 				7BE8755E1EBBADF50057195C /* LoadingScene.h */,
 				7BE8755F1EBBADF50057195C /* LoadingScene.mm */,
 				7BE875651EBBDA0F0057195C /* StartScene.h */,
@@ -2040,6 +2045,7 @@
 				7BE40A5A1EBD2C8F00385866 /* GameUtils.mm in Sources */,
 				7BE874041EBBA1220057195C /* CCAnimationCache.m in Sources */,
 				7BE874771EBBA1230057195C /* SBJsonStreamParserAdapter.m in Sources */,
+				7BDA60441EC1742C00ECE366 /* ContactListener.mm in Sources */,
 				7BE873ED1EBBA1220057195C /* b2DistanceJoint.cpp in Sources */,
 				7BE8742F1EBBA1230057195C /* cocos2d.m in Sources */,
 				7BE40A6D1EBE769800385866 /* Ice.mm in Sources */,

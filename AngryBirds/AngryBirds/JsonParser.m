@@ -13,6 +13,7 @@
 @end
 
 @implementation JsonParser
+//@synthesize tag,x,y,angle;
 
 +(id)getAllSprite:(NSString *)file{
     //get content of json file
@@ -24,6 +25,8 @@
     NSMutableArray* array=[NSMutableArray array];
     for(NSDictionary* dict in spArray){
         SpriteModel* sm=[[SpriteModel alloc]init];
+        //JsonParser* sm=[[JsonParser alloc]init];
+
         sm.tag= [[dict objectForKey:@"tag"]intValue];
         sm.x=[[dict objectForKey:@"x"]floatValue];
         sm.y=[[dict objectForKey:@"y"]floatValue];

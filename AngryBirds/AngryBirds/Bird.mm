@@ -41,6 +41,7 @@
     //create a fixture based on physical attribute
     b2CircleShape shape;
     shape.m_radius=5.0f/PTM_RATIO;
+    
     b2FixtureDef fixtureDef;
     fixtureDef.shape=&shape;
     fixtureDef.density=80.0f;
@@ -53,6 +54,29 @@
     body->ApplyLinearImpulse(force, bodyDef.position);
     
 }
+
+-(void)hitAnimationX:(float)x andY:(float)y{
+    for (int i = 0; i<6; i++) {
+        int range = 2;
+        
+        CCSprite *temp = [CCSprite spriteWithFile:@"yumao1.png"];
+        temp.scale = (float)(arc4random()%5/10.1f);
+        
+        temp.position = CGPointMake(x+arc4random()%10*range-10, y+arc4random()%10*range-10);
+        id actionMove = [CCMoveTo actionWithDuration:1 position:CGPointMake(x+arc4random()%10*range-10, y+arc4random()%10*range-10)];
+        
+        id actionAlpha = [CCFadeOut actionWithDuration:1];
+        id actionRotate = [CCRotateBy actionWithDuration:1 angle:arc4random()%180];
+        id actionMoveEnd = [CCCallFuncN actionWithTarget:self selector:@selector(runEnd:)];
+        
+        id mut =[CCSpawn actions:actionMove,actionAlpha,actionRotate,nil];
+        [temp runAction:[CCSequence actions:mut, actionMoveEnd,nil]];
+        
+        [myLayer addChild:temp];
+    }
+}
+
+
 
 
 @end

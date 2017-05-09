@@ -14,6 +14,7 @@
 #import "Pig.h"
 #import "Ice.h"
 #import "Slingshot.h"
+#import "ContactListener.h"
 
 @interface GameScene : CCLayer <SpriteDelegate,CCTargetedTouchDelegate>
 {
@@ -32,8 +33,10 @@
     //define a b2world to make bird fly better
     b2World* world;
     
+//    collision listener
+    ContactListener* contactListener;
 }
-+(id) scene;
+//+(id) scene;
 //each level
 +(id) sceneWithLevel:(int)level;
 -(id) initWithLevel:(int)level;

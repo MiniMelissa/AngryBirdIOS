@@ -92,6 +92,11 @@
     //true: no object is moving
     world = new b2World(gravity,true);
     
+    //create a collision listener
+    contactListener = new ContactListener(world,self);
+    //set collision listener for world
+    world->SetContactListener(contactListener);
+    
     //create ground whose anchor point is (0,0)
     b2BodyDef groundDef;
     groundDef.position.Set(0, 0);
@@ -109,9 +114,10 @@
 }
 
 -(void) tick:(ccTime)dt{
+      //dt should be ccTime, cannot be double,otherwise bird can not fly
     //让世界往前模拟
-    //if set 1 to 6 , bird can not fly
-    world->Step(dt, 8, 1);
+  
+    world->Step(dt, 8, 6);
     //更新cocos2d的界面
     for(b2Body *b=world->GetBodyList();b;b=b->GetNext()){
         if(b->GetUserData()!=NULL){
@@ -122,6 +128,20 @@
             sb.position=ccp(b->GetPosition().x*PTM_RATIO, b->GetPosition().y*PTM_RATIO);
             //把box2d中角度转换成cocos2d的角度
             sb.rotation=-1*CC_RADIANS_TO_DEGREES(b->GetAngle());
+            
+            //如果小鸟停止运动删除小鸟
+        /*    if (sb.tag == BIRD_ID) {
+                if (!b->IsAwake()) {
+                    world->DestroyBody(b);
+                    [sb destroy];
+                }
+            }
+            //
+            CGSize winSize = [[CCDirector sharedDirector] winSize];
+            if (sb.HP <= 0 || sb.position.x > winSize.width-20 || sb.position.y < 84) {
+                world->DestroyBody(b);
+                [sb destroy];
+            }*/
             
         }
     }
@@ -196,13 +216,28 @@
     NSLog(@"path is %@", path);
     NSArray *spriteArray = [JsonParser getAllSprite:path];
     NSLog(@"count is : %d",(int)spriteArray.count);
-    b2World* world=NULL;
-    CCSprite *pig=NULL;
+//    b2World* world=NULL;
     for (SpriteModel *sm in spriteArray) {
+//    for (JsonParser *sm in spriteArray) {
+
+      /*  if(sm.tag==PIG_ID){
+            CCSprite *pig= [[Pig alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+            NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
+            [self addChild:pig];
+            NSLog(@"PIG: ");
+            [pig release];
+        }
+        else if(sm.tag==ICE_ID){
+            CCSprite *ice = [[Ice alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+            [self addChild:ice];
+            NSLog(@"ICE: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
+            [ice release];
+
+        }*/
         switch (sm.tag) {
             case PIG_ID:
             {
-                pig = [[Pig alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+                CCSprite *pig= [[Pig alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
                 NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
                 [self addChild:pig];
                 NSLog(@"PIG: ");
@@ -222,11 +257,11 @@
                 break;
         }
     }
-//    pig=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
+    CCSprite* pig=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
 //    NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
     
- //   [self addChild:pig];
- //   [pig release];
+    [self addChild:pig];
+    [pig release];
     
     //bird can show
     birds= [[NSMutableArray alloc]init];
