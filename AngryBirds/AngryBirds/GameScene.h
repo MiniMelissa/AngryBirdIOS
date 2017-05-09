@@ -15,7 +15,7 @@
 #import "Ice.h"
 #import "Slingshot.h"
 
-@interface GameScene : CCLayer <SpriteDelegate>
+@interface GameScene : CCLayer <SpriteDelegate,CCTargetedTouchDelegate>
 {
     int currentlevel;
     CCLabelTTF *scoreLable;
@@ -28,6 +28,9 @@
     
     Slingshot* slingshot;
     int touchStatus;
+    
+    //define a b2world to make bird fly better
+    b2World* world;
     
 }
 +(id) scene;

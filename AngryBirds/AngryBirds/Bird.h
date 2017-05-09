@@ -12,8 +12,11 @@
 @interface Bird : SpriteBase{
     BOOL _isFly;
     BOOL _isReady;
+    b2World* _world;
 }
 
 @property(nonatomic,assign)BOOL isFly;
 @property(nonatomic,assign)BOOL isReady;
+
+-(void) setSpeedX:(float)x andY:(float)y andWorld:(b2World*)world;
 @end

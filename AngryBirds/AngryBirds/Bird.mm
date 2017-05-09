@@ -25,4 +25,34 @@
     return self;
 }
 
+
+-(void) setSpeedX:(float)x andY:(float)y andWorld:(b2World*)world{
+//    _world=world;
+//    myWorld=world;
+    
+    //create a b2body for sprite
+    b2BodyDef bodyDef;
+    bodyDef.type=b2_dynamicBody;
+    bodyDef.position.Set(self.position.x/PTM_RATIO, self.position.y/PTM_RATIO);
+    bodyDef.userData=self;
+    b2Body* body=world->CreateBody(&bodyDef);
+    myBody=body;
+    
+    //create a fixture based on physical attribute
+    b2CircleShape shape;
+    shape.m_radius=5.0f/PTM_RATIO;
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape=&shape;
+    fixtureDef.density=80.0f;
+    fixtureDef.friction=1.0f;
+    fixtureDef.restitution=0.5f;
+    body->CreateFixture(&fixtureDef);
+    
+    //给球的中心点一个力
+    b2Vec2 force=b2Vec2(x,y);
+    body->ApplyLinearImpulse(force, bodyDef.position);
+    
+}
+
+
 @end

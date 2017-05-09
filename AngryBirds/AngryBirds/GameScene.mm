@@ -73,6 +73,7 @@
         //add targeted  delegate
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         
+        [self createWorld];
         
         //5/6/2017
         [self creatlevel];
@@ -80,6 +81,50 @@
     }
     
     return self;
+}
+
+-(void)createWorld{
+    CGSize scSize=[[CCDirector sharedDirector] winSize];
+    
+    //y:-5.0 向下重力加速度
+    b2Vec2 gravity;
+    gravity.Set(0.0f, -5.0f);
+    //true: no object is moving
+    world = new b2World(gravity,true);
+    
+    //create ground whose anchor point is (0,0)
+    b2BodyDef groundDef;
+    groundDef.position.Set(0, 0);
+    //create a ground body 地板刚体
+    b2Body *groundBody=world->CreateBody(&groundDef);
+    
+    //b2Fixture
+    b2PolygonShape groundShape;
+    //PTM_RATIO=32,每32points表示1米
+    groundShape.SetAsEdge(b2Vec2(0,87/PTM_RATIO), b2Vec2(scSize.width/PTM_RATIO,87/PTM_RATIO));
+    groundBody->CreateFixture(&groundShape,0);
+    
+    //启动定时器， 每1/60s 调一次tick
+    [self schedule:@selector(tick:)];
+}
+
+-(void) tick:(ccTime)dt{
+    //让世界往前模拟
+    //if set 1 to 6 , bird can not fly
+    world->Step(dt, 8, 1);
+    //更新cocos2d的界面
+    for(b2Body *b=world->GetBodyList();b;b=b->GetNext()){
+        if(b->GetUserData()!=NULL){
+            //userdata表示每个刚体都可以存一些私有数据，一般放sprite
+            //b2body 与sprite 一一对应
+            SpriteBase* sb=(SpriteBase*) b->GetUserData();
+            //物理坐标与cocos2d坐标不同，此处做变换
+            sb.position=ccp(b->GetPosition().x*PTM_RATIO, b->GetPosition().y*PTM_RATIO);
+            //把box2d中角度转换成cocos2d的角度
+            sb.rotation=-1*CC_RADIANS_TO_DEGREES(b->GetAngle());
+            
+        }
+    }
 }
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -114,11 +159,12 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
     //放开slingshot,bird fly and slingshot recover
+    CGPoint touchPosition=[self convertTouchToNodeSpace:touch];
+
     if(touchStatus==TOUCH_SHOTBIRD){
-        CGPoint touchPosition=[self convertTouchToNodeSpace:touch];
         slingshot.endPoint=SLINGSHOT_POS;
-        
-        //calculate the ratio which decide the route bird fly
+/*
+        //calculate the ratio which decide the route bird fly,直线飞
         CGFloat r=[self getRatioFromPoint:touchPosition toPoint:SLINGSHOT_POS];
         CGFloat endx=300;
         CGFloat endy=endx*r+touchPosition.y;
@@ -126,6 +172,10 @@
         CCMoveTo *moveAction=[[CCMoveTo alloc] initWithDuration:1.0f position:desPoint];
         [currentBird runAction:moveAction];
         [moveAction release];
+*/
+        float x=(85.0f-touchPosition.x)*50/70.0f;
+        float y=(125.0f-touchPosition.y)*50/70.0f;
+        [currentBird setSpeedX:x andY:y andWorld:world];
         
         [birds removeObject:currentBird];
         currentBird=nil;
