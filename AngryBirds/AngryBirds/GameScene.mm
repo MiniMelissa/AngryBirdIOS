@@ -10,6 +10,7 @@
 
 #define TOUCH_UNKNOW 0
 #define TOUCH_SHOTBIRD 1
+#define TOUCH_BACK 2
 #define SLINGSHOT_POS CGPointMake(85, 125)
 
 @implementation GameScene
@@ -130,7 +131,7 @@
             sb.rotation=-1*CC_RADIANS_TO_DEGREES(b->GetAngle());
             
             //如果小鸟停止运动删除小鸟
-        /*    if (sb.tag == BIRD_ID) {
+            if (sb.tag == BIRD_ID) {
                 if (!b->IsAwake()) {
                     world->DestroyBody(b);
                     [sb destroy];
@@ -141,7 +142,7 @@
             if (sb.HP <= 0 || sb.position.x > winSize.width-20 || sb.position.y < 84) {
                 world->DestroyBody(b);
                 [sb destroy];
-            }*/
+            }
             
         }
     }
@@ -302,5 +303,8 @@
     [super dealloc];
 }
 
+- (void) sprite:(SpriteBase *)sprite withScore:(int)score {
+    
+}
 
 @end
