@@ -41,8 +41,8 @@
     
     // refresh animation 60 times/min
     [direct setAnimationInterval:1.0f/60.0f];
-    //for debugging purpose, display current refresh speed
-    [direct setDisplayFPS:YES];
+    //for debugging purpose, display current refresh speed,shown in left-bottom corner
+//    [direct setDisplayFPS:YES];
     
     //set rootview as root
     ViewController *rootview=[[ViewController alloc]init];

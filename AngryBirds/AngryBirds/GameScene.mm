@@ -11,7 +11,7 @@
 #define TOUCH_UNKNOW 0
 #define TOUCH_SHOTBIRD 1
 #define TOUCH_BACK 2
-#define SLINGSHOT_POS CGPointMake(85, 125)
+#define SLINGSHOT_POS CGPointMake(85, 140)
 
 @implementation GameScene
 
@@ -42,6 +42,10 @@
         CCSprite* bg =[CCSprite spriteWithFile:@"bg.png"];
         CGSize winSize=[[CCDirector sharedDirector] winSize];
         bg.position=ccp(winSize.width/2, winSize.height/2);
+        [bg setScaleX:winSize.width/bg.contentSize.width];
+        [bg setScaleY:winSize.height/bg.contentSize.height];
+        NSLog(@"gamescenebg: x:%f, y:%f",bg.contentSize.width,bg.contentSize.height);
+
         [self addChild:bg];
         
         //create score
@@ -52,22 +56,28 @@
         
         //create slingshot 弹弓 5/7/2017
         CCSprite* leftshot=[CCSprite spriteWithFile:@"leftshot.png"];
-        leftshot.position=ccp(85, 110);
+        leftshot.position=ccp(85, 120);
         [self addChild:leftshot];
         
         CCSprite* rightshot=[CCSprite spriteWithFile:@"rightshot.png"];
-        rightshot.position=ccp(85, 110);
+        rightshot.position=ccp(85, 120);
         [self addChild:rightshot];
         
         
         slingshot=[[Slingshot alloc]init];
-        slingshot.startPoint1=ccp(82, 130);
-        slingshot.startPoint2=ccp(92, 128);
+        slingshot.startPoint1=ccp(82, 140);
+        slingshot.startPoint2=ccp(92, 138);
         slingshot.endPoint=SLINGSHOT_POS;
         slingshot.contentSize=CGSizeMake(480, 320);
         slingshot.position=ccp(240, 160);
         [self addChild:slingshot];
         
+        //set back button
+        CCSprite* back=[CCSprite spriteWithFile:@"backarrow.png"];
+        back.position=ccp(40.0f,40.0f);
+        back.scale=0.5f;
+        back.tag=100;
+        [self addChild:back];
         
         //5/8/2017, we can check the definition of isTouchEnabled
         self.isTouchEnabled=YES;
@@ -89,7 +99,7 @@
     
     //y:-5.0 向下重力加速度
     b2Vec2 gravity;
-    gravity.Set(0.0f, -5.0f);
+    gravity.Set(0.0f, -2.0f);
     //true: no object is moving
     world = new b2World(gravity,true);
     
@@ -107,7 +117,7 @@
     //b2Fixture
     b2PolygonShape groundShape;
     //PTM_RATIO=32,每32points表示1米
-    groundShape.SetAsEdge(b2Vec2(0,87/PTM_RATIO), b2Vec2(scSize.width/PTM_RATIO,87/PTM_RATIO));
+    groundShape.SetAsEdge(b2Vec2(0,100/PTM_RATIO), b2Vec2(scSize.width/PTM_RATIO,100/PTM_RATIO));
     groundBody->CreateFixture(&groundShape,0);
     
     //启动定时器， 每1/60s 调一次tick
@@ -149,11 +159,24 @@
 }
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-    //判断touch is among the range of currentBird
+    //判断touch is in the range of currentBird
     touchStatus=TOUCH_UNKNOW;
     
     //get the touch position on screen
     CGPoint touchPosition= [self convertTouchToNodeSpace:touch];
+    
+    //check if touch is in back area
+    for(int i=0;i<self.children.count;i++ ) {
+        //get the ith sprite of self
+        CCSprite* one=[self.children objectAtIndex:i];
+        //make sure back is in self, tag=100 means it is 100
+        if(CGRectContainsPoint(one.boundingBox, touchPosition)&&one.tag==100){
+            touchStatus=TOUCH_BACK;
+            return YES;
+        }
+        
+    }
+    
     if(currentBird==nil) return NO;
     //get the area of current bird
     CGRect birdRect=currentBird.boundingBox;
@@ -195,7 +218,7 @@
         [moveAction release];
 */
         float x=(85.0f-touchPosition.x)*50/70.0f;
-        float y=(125.0f-touchPosition.y)*50/70.0f;
+        float y=(140.0f-touchPosition.y)*50/70.0f;
         [currentBird setSpeedX:x andY:y andWorld:world];
         
         [birds removeObject:currentBird];
@@ -203,6 +226,13 @@
         //make next bird jump to slingshot
         [self performSelector:@selector(jump) withObject:nil afterDelay:1.0f];
         
+    }
+    //back to levelscene
+    else if(touchStatus==TOUCH_BACK) {
+        CCScene* cs= [LevelScene scene];
+//        CCTransitionScene* trans=[[CCTransitionMoveInB alloc]initWithDuration:1.0f scene:cs];
+        [[CCDirector sharedDirector] replaceScene:cs];
+//        [trans release];
     }
 }
 
@@ -213,6 +243,7 @@
 
 -(void)creatlevel{
     NSString *s = [NSString stringWithFormat:@"%d", currentlevel];
+    NSLog(@"currentlevel:%d",currentlevel);
     NSString *path = [[NSBundle mainBundle] pathForResource:s ofType:@"data"];
     NSLog(@"path is %@", path);
     NSArray *spriteArray = [JsonParser getAllSprite:path];
@@ -264,9 +295,9 @@
     
     //bird can show
     birds= [[NSMutableArray alloc]init];
-    Bird* bird1=[[Bird alloc]initWithX:160 andY:93 andWorld:world andLayer:self];
-    Bird* bird2=[[Bird alloc]initWithX:140 andY:93 andWorld:world andLayer:self];
-    Bird* bird3=[[Bird alloc]initWithX:120 andY:93 andWorld:world andLayer:self];
+    Bird* bird1=[[Bird alloc]initWithX:160 andY:100 andWorld:world andLayer:self];
+    Bird* bird2=[[Bird alloc]initWithX:140 andY:100 andWorld:world andLayer:self];
+    Bird* bird3=[[Bird alloc]initWithX:120 andY:100 andWorld:world andLayer:self];
     [birds addObject:bird1];
     [birds addObject:bird2];
     [birds addObject:bird3];
@@ -285,7 +316,7 @@
 -(void)jump{
     if(birds.count>0 && !gameFinish){
         currentBird =[birds objectAtIndex:0];
-        CCJumpTo *action= [[CCJumpTo alloc] initWithDuration:1 position:ccp(85, 125) height:50 jumps:1];
+        CCJumpTo *action= [[CCJumpTo alloc] initWithDuration:1 position:SLINGSHOT_POS height:50 jumps:1];
         CCCallBlockN *jumpFinish=[[CCCallBlockN alloc]initWithBlock:^(CCNode *node) {
             gameStart=YES;
             currentBird.isReady=YES;

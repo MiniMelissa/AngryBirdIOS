@@ -28,7 +28,7 @@
     NSString* file=[[self class] getFilePath];
     NSString* s = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     if(s) return [s intValue];
-    return 10;
+    return 2;
 }
 
 +(void) writeLevelToFiel:(int)level{

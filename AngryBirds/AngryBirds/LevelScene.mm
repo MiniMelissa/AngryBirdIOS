@@ -25,9 +25,11 @@
     if(self){
         CGSize winSize=[[CCDirector sharedDirector]winSize];
         //set background pic as selectlevel
-        CCSprite* sp=[CCSprite spriteWithFile:@"selectlevel.png"];
-        sp.position=ccp(winSize.width/2.0f, winSize.height/2.0f);
-        [self addChild:sp];
+        CCSprite* bg=[CCSprite spriteWithFile:@"bg.png"];
+        bg.position=ccp(winSize.width/2, winSize.height/2);
+        [bg setScaleX:winSize.width/bg.contentSize.width];
+        [bg setScaleY:winSize.height/bg.contentSize.height];
+        [self addChild:bg];
         
         //set a back button
         CCSprite* back=[CCSprite spriteWithFile:@"backarrow.png"];
@@ -47,7 +49,7 @@
                 imagePath=@"level.png";
                 NSString* str=[NSString stringWithFormat:@"%d",i+1];
                 CCLabelTTF* label=[CCLabelTTF  labelWithString:str dimensions:CGSizeMake(60.0f, 60.0f)  alignment:UITextAlignmentCenter fontName:@"Marker Felt" fontSize:30.0f];
-                float x=60+i%7*60; //间隔60
+                float x=80+i%7*80; //间隔60
                 float y=320-75-i/7*80; //间隔80
                 label.position=ccp(x, y);
                 [self addChild:label z:2];// z=2 to keep label is above level
@@ -57,7 +59,7 @@
             }
             CCSprite *level=[CCSprite spriteWithFile:imagePath];
             level.tag=i+1;//i+1 to avoid tag=0, cuz default tag=0
-            float x=60+i%7*60; //间隔60
+            float x=80+i%7*80; //间隔60
             float y=320-60-i/7*80; //间隔80
             level.position=ccp(x, y);
             level.scale=0.6f;
@@ -89,17 +91,22 @@
         CCSprite* one=[self.children objectAtIndex:i];
         //make sure back is in self, tag=100 means it is 100
         if(CGRectContainsPoint(one.boundingBox, nodePoint)&&one.tag==100){
+//            [self schedule:@selector(tick:) interval:1.0f];
+
+            CCScene* start=[StartScene scene];
+            [[CCDirector sharedDirector] replaceScene:start];
+          /*
             CCScene * cs= [StartScene scene];
             CCTransitionScene* trans=[[CCTransitionMoveInB alloc]initWithDuration:1.0f scene:cs];
             [[CCDirector sharedDirector] replaceScene:trans];
-            [trans release];
+            [trans release];*/
         }
         else if(CGRectContainsPoint(one.boundingBox, nodePoint)&& one.tag<sucesslevel+1 && one.tag>0) {
             NSLog(@"choose %ld\n .",(long)one.tag);
 //            CCScene* cs=[GameScene scene];
 
             //change one.tag(=-1) to 2, pig and ice appear
-            CCScene* cs=[GameScene sceneWithLevel:2];
+            CCScene* cs=[GameScene sceneWithLevel:one.tag];
             [[CCDirector sharedDirector] replaceScene:cs];
         }
     }

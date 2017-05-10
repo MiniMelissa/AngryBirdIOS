@@ -99,7 +99,7 @@
     //4.小格子
 //    CCTransitionScene* transScene=[[CCTransitionTurnOffTiles alloc] initWithDuration:3.0f scene:level];
     //5.below 上下左右滑动
-    CCTransitionScene* transScene=[[CCTransitionSlideInB alloc] initWithDuration:0.5f scene:level];
+//    CCTransitionScene* transScene=[[CCTransitionSlideInB alloc] initWithDuration:0.5f scene:level];
     //6。
 //        CCTransitionScene* transScene=[[CCTransitionFlipX alloc] initWithDuration:3.0f scene:level];
     //7.左上右下轴翻转
@@ -107,9 +107,9 @@
 
     //director transfer to animation scene
 //    [[CCDirector sharedDirector] replaceScene:transScene];
-    [[CCDirector sharedDirector] replaceScene:transScene];
+    [[CCDirector sharedDirector] replaceScene:level];
 
-    [transScene release];
+//    [transScene release];
     
 }
 
@@ -124,10 +124,10 @@
     [bird setScale:(arc4random()%9+1)/10.0f];
     
     //generate a random number 0~50
-    [bird setPosition:ccp(50.0f+arc4random()%50, 70.0f)];
+    [bird setPosition:ccp(100.0f+arc4random()%50, 70.0f)];
     // an actionJump to bird, actionTime:time
-    CGPoint end=ccp(360.f+arc4random()%50, 70.0f);
-    CGFloat height=arc4random()%100+50.0f;
+    CGPoint end=ccp(500.0f+arc4random()%50, 70.0f);
+    CGFloat height=arc4random()%100+100.0f;
     CGFloat time=2.0f;
     id actionJump=[CCJumpTo actionWithDuration:time position:end height:height jumps:1];
     

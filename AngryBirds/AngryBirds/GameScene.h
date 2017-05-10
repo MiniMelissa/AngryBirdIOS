@@ -15,6 +15,7 @@
 #import "Ice.h"
 #import "Slingshot.h"
 #import "ContactListener.h"
+#import "LevelScene.h"
 
 @interface GameScene : CCLayer <SpriteDelegate,CCTargetedTouchDelegate>
 {
