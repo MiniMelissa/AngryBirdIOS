@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameUtils : NSObject
+@interface GameUtils : NSObject{
+    
+}
 
 +(int) readLevelFromFile;
 +(void) writeLevelToFiel:(int)level;

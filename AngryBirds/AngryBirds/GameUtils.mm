@@ -7,6 +7,8 @@
 //
 
 #import "GameUtils.h"
+#define BIRDWIN YES
+#define PIGWIN NO
 
 @implementation GameUtils
 
@@ -28,7 +30,7 @@
     NSString* file=[[self class] getFilePath];
     NSString* s = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     if(s) return [s intValue];
-    return 2;
+    return 1;
 }
 
 +(void) writeLevelToFiel:(int)level{

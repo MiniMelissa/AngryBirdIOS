@@ -13,6 +13,9 @@
 #define TOUCH_BACK 2
 #define SLINGSHOT_POS CGPointMake(85, 140)
 
+BOOL gameFinish=NO;
+int birdCount=3,pigCount=0;
+
 @implementation GameScene
 
 //+(id)scene{
@@ -50,8 +53,9 @@
         
         //create score
         NSString* scoreStr=[NSString stringWithFormat:@"score %d",score];
-        scoreLable = [[CCLabelTTF alloc] initWithString:scoreStr dimensions:CGSizeMake(300, 300) alignment:UITextAlignmentLeft fontName:@"Arial" fontSize:30];
-        scoreLable.position=ccp(450, 170);
+        scoreLable = [[CCLabelTTF alloc] initWithString:scoreStr dimensions:CGSizeMake(100, 100) alignment:UITextAlignmentLeft fontName:@"Arial" fontSize:20];
+        [scoreLable setAnchorPoint:ccp(1, 1)];
+        scoreLable.position=ccp(winSize.width, 360.0);
         [self addChild:scoreLable];
         
         //create slingshot 弹弓 5/7/2017
@@ -88,11 +92,22 @@
         
         //5/6/2017
         [self creatlevel];
+        
+        for(b2Body *b=world->GetBodyList();b;b=b->GetNext()){
+            if(b->GetUserData()!=NULL){
+                SpriteBase* sb=(SpriteBase*) b->GetUserData();
+                if(sb.tag==BIRD_ID) birdCount++;
+                if(sb.tag==PIG_ID) pigCount++;
+            }
+        }
+        NSLog(@"before game start, bird#: %d, pig# : %d",birdCount,pigCount);
 
     }
-    
+
     return self;
 }
+
+
 
 -(void)createWorld{
     CGSize scSize=[[CCDirector sharedDirector] winSize];
@@ -122,6 +137,8 @@
     
     //启动定时器， 每1/60s 调一次tick
     [self schedule:@selector(tick:)];
+
+    
 }
 
 -(void) tick:(ccTime)dt{
@@ -129,6 +146,8 @@
     //让世界往前模拟
   
     world->Step(dt, 8, 6);
+    
+    
     //更新cocos2d的界面
     for(b2Body *b=world->GetBodyList();b;b=b->GetNext()){
         if(b->GetUserData()!=NULL){
@@ -150,14 +169,36 @@
             //
             CGSize winSize = [[CCDirector sharedDirector] winSize];
             if (sb.HP <= 0 || sb.position.x > winSize.width-20 || sb.position.y < 84) {
+                if(sb.tag==PIG_ID) pigCount--;
+                if(sb.tag==BIRD_ID) birdCount--;
                 world->DestroyBody(b);
                 [sb destroy];
             }
-            
+            NSLog(@"after game start, bird#: %d, pig# : %d",birdCount,pigCount);
+
         }
+    }
+    if(birdCount==0 || pigCount==0){
+        [self gamefinish];
     }
 }
 
+-(void) gamefinish{
+    //add final score when game finish
+    CGSize winSize=[[CCDirector sharedDirector]winSize];
+    CCSprite* scoreboard =[CCSprite spriteWithFile:@"finish.png"];
+    [scoreboard setScale:0.7];
+    scoreboard.position=ccp(winSize.width/2, winSize.height/2);
+    [self addChild:scoreboard];
+    NSString* str=[NSString stringWithFormat:@"%d",score];
+    CCLabelTTF* label=[CCLabelTTF  labelWithString:str dimensions:CGSizeMake(60.0f, 60.0f)  alignment:UITextAlignmentCenter fontName:@"Marker Felt" fontSize:30.0f];
+    label.position=ccp(winSize.width/2, winSize.height/2-30);
+    [self addChild:label z:2];
+}
+       
+    
+
+       
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     //判断touch is in the range of currentBird
     touchStatus=TOUCH_UNKNOW;
