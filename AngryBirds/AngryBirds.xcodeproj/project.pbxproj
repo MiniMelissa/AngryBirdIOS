@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B208FE61EC26B1A003AEAF8 /* ls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FE51EC26B1A003AEAF8 /* ls.jpg */; };
+		7B208FE91EC26D26003AEAF8 /* ABlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FE71EC26D26003AEAF8 /* ABlogo.png */; };
+		7B208FEA1EC26D26003AEAF8 /* ABNewLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FE81EC26D26003AEAF8 /* ABNewLogo.png */; };
+		7B208FEC1EC26FB6003AEAF8 /* levelbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FEB1EC26FB6003AEAF8 /* levelbg.png */; };
+		7B208FF01EC2C29B003AEAF8 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FEF1EC2C29B003AEAF8 /* play.png */; };
 		7B96E0DF1EB90A6D009BF89E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0DE1EB90A6D009BF89E /* main.m */; };
 		7B96E0E21EB90A6D009BF89E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */; };
 		7B96E0E51EB90A6D009BF89E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E41EB90A6D009BF89E /* ViewController.m */; };
@@ -342,6 +347,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B208FE51EC26B1A003AEAF8 /* ls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ls.jpg; path = Images/ls.jpg; sourceTree = "<group>"; };
+		7B208FE71EC26D26003AEAF8 /* ABlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ABlogo.png; path = Images/ABlogo.png; sourceTree = "<group>"; };
+		7B208FE81EC26D26003AEAF8 /* ABNewLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ABNewLogo.png; path = Images/ABNewLogo.png; sourceTree = "<group>"; };
+		7B208FEB1EC26FB6003AEAF8 /* levelbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = levelbg.png; path = Images/levelbg.png; sourceTree = "<group>"; };
+		7B208FEF1EC2C29B003AEAF8 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Images/play.png; sourceTree = "<group>"; };
 		7B96E0DA1EB90A6D009BF89E /* AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E0DE1EB90A6D009BF89E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B96E0E01EB90A6D009BF89E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1503,6 +1513,11 @@
 		7BE874851EBBA1CB0057195C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7B208FEF1EC2C29B003AEAF8 /* play.png */,
+				7B208FEB1EC26FB6003AEAF8 /* levelbg.png */,
+				7B208FE71EC26D26003AEAF8 /* ABlogo.png */,
+				7B208FE81EC26D26003AEAF8 /* ABNewLogo.png */,
+				7B208FE51EC26B1A003AEAF8 /* ls.jpg */,
 				7BE875631EBBB6D30057195C /* loadingScene.png */,
 				7BE874861EBBA20C0057195C /* 1.png */,
 				7BE874871EBBA20C0057195C /* 2.png */,
@@ -1748,6 +1763,7 @@
 			files = (
 				7BE8750A1EBBA20D0057195C /* circlewood4.png in Resources */,
 				7BE875061EBBA20D0057195C /* bluebird1.png in Resources */,
+				7B208FEA1EC26D26003AEAF8 /* ABNewLogo.png in Resources */,
 				7BE875331EBBA20D0057195C /* rightshot.png in Resources */,
 				7BE874581EBBA1230057195C /* bitmapFontTest3.fnt in Resources */,
 				7BE874631EBBA1230057195C /* konqa32-hd.png in Resources */,
@@ -1840,6 +1856,7 @@
 				7BE874EF1EBBA20D0057195C /* 1.png in Resources */,
 				7BE875571EBBA20D0057195C /* yumao3.png in Resources */,
 				7BE875411EBBA20D0057195C /* star0.png in Resources */,
+				7B208FEC1EC26FB6003AEAF8 /* levelbg.png in Resources */,
 				7BE875251EBBA20D0057195C /* loading.png in Resources */,
 				7BE8753E1EBBA20D0057195C /* SjApk_com_0180055.jpg in Resources */,
 				7BE875351EBBA20D0057195C /* selectlevel@2x.png in Resources */,
@@ -1847,6 +1864,7 @@
 				7BE8750D1EBBA20D0057195C /* Default@2x.png in Resources */,
 				7BE874681EBBA1230057195C /* MarkerFelt.ttc in Resources */,
 				7BE8745C1EBBA1230057195C /* bitmapFontTest5.fnt in Resources */,
+				7B208FE91EC26D26003AEAF8 /* ABlogo.png in Resources */,
 				7BE8754A1EBBA20D0057195C /* stone3.png in Resources */,
 				7BE8750C1EBBA20D0057195C /* Default.png in Resources */,
 				7BE8745A1EBBA1230057195C /* bitmapFontTest4.fnt in Resources */,
@@ -1870,6 +1888,7 @@
 				7BE8751B1EBBA20D0057195C /* level.png in Resources */,
 				7BE875261EBBA20D0057195C /* loading@2x.png in Resources */,
 				7BE874601EBBA1230057195C /* futura-48.fnt in Resources */,
+				7B208FE61EC26B1A003AEAF8 /* ls.jpg in Resources */,
 				7BE875551EBBA20D0057195C /* yumao1.png in Resources */,
 				7BE8745F1EBBA1230057195C /* fps_images.png in Resources */,
 				7BE874651EBBA1230057195C /* konqa32.png in Resources */,
@@ -1887,6 +1906,7 @@
 				7BE8752C1EBBA20D0057195C /* pig_11.png in Resources */,
 				7BE874561EBBA1230057195C /* bitmapFontTest2.bmp in Resources */,
 				7BE8752E1EBBA20D0057195C /* pig_44.png in Resources */,
+				7B208FF01EC2C29B003AEAF8 /* play.png in Resources */,
 				7BE875101EBBA20D0057195C /* ice2.png in Resources */,
 				7BE875401EBBA20D0057195C /* snow.png in Resources */,
 				7BE8754D1EBBA20D0057195C /* stonelong2.png in Resources */,

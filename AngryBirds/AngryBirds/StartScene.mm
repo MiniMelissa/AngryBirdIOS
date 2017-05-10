@@ -37,22 +37,40 @@
     self=[super init];
     if(self){
         CGSize screenSize=[[CCDirector sharedDirector] winSize];
-        CCSprite* background=[CCSprite spriteWithFile:@"startbg.png"];
+        NSLog(@"start screen: x:%f,y:%f",screenSize.width,screenSize.height);
+        
+        //set background
+        //levelbg:1280*800
+        CCSprite* background=[CCSprite spriteWithFile:@"levelbg.png"];
         [background setPosition:ccp(screenSize.width/2.0f, screenSize.height/2)];
+        NSLog(@"bg: x:%f, y:%f",background.contentSize.width,background.contentSize.height);
+        [background setScaleX:0.52];
+        [background setScaleY:0.47f];
         [self addChild:background];
         
-        CCSprite* ablogo=[CCSprite spriteWithFile:@"angrybird.png"];
-        [ablogo setPosition:ccp(240.0f,250.0f)];
+        //set logo
+        CCSprite* ablogo=[CCSprite spriteWithFile:@"ABNewLogo.png"];
+        NSLog(@"ablogo: x:%f, y:%f",ablogo.contentSize.width,ablogo.contentSize.height);
+        [ablogo setScale:0.3f];
+        [ablogo setPosition:ccp(screenSize.width/2,310.0f)];
         [self addChild:ablogo];
         
+        
         //add menu
-        CCSprite *start=[CCSprite spriteWithFile:@"start.png"];
+        CCSprite *startPic=[CCSprite spriteWithFile:@"start.png"];
+        [startPic setPosition:ccp(screenSize.width/2, screenSize.height/2-30)];
+        [self addChild:startPic];
+        
+        CCSprite *start=[CCSprite spriteWithFile:@"play.png"];
+        [start setScaleX:1.4];
+        [start setScaleY:1.2];
+
         //create a menuitem, add sprite in it, normal:start, select:nill
         //when click menuitem, call startGame: method in self
         CCMenuItemSprite *startMenu= [CCMenuItemSprite itemFromNormalSprite:start selectedSprite:nil target:self selector:@selector(startGame:)];
         
         CCMenu *menu=[CCMenu menuWithItems:startMenu, nil];
-        [menu setPosition:ccp(240.0f, 130.0f)];
+        [menu setPosition:ccp(screenSize.width/2-30, screenSize.height/2-85)];
         [self addChild:menu];
         
         //加定时器.run tick every second
@@ -60,8 +78,8 @@
         
         
         //add snow partical
-        CCParticleSystem* snow=[[ParticalManager sharedParticalManager] particalWithType:ParticalSnow];
-        [self addChild:snow];
+//        CCParticleSystem* snow=[[ParticalManager sharedParticalManager] particalWithType:ParticalSnow];
+//        [self addChild:snow];
     }
     return self;
 }
@@ -75,20 +93,22 @@
     //1.分竖条
 //        CCTransitionScene* transScene=[[CCTransitionSplitCols alloc] initWithDuration:3.0f scene:level];
     //2.分横条
-    CCTransitionScene* transScene=[[CCTransitionSplitRows alloc] initWithDuration:3.0f scene:level];
+//    CCTransitionScene* transScene=[[CCTransitionSplitRows alloc] initWithDuration:3.0f scene:level];
     //3.雷达
 //    CCTransitionScene* transScene=[[CCTransitionRadialCCW alloc] initWithDuration:3.0f scene:level];
     //4.小格子
 //    CCTransitionScene* transScene=[[CCTransitionTurnOffTiles alloc] initWithDuration:3.0f scene:level];
     //5.below 上下左右滑动
-//    CCTransitionScene* transScene=[[CCTransitionSlideInB alloc] initWithDuration:3.0f scene:level];
+    CCTransitionScene* transScene=[[CCTransitionSlideInB alloc] initWithDuration:0.5f scene:level];
     //6。
 //        CCTransitionScene* transScene=[[CCTransitionFlipX alloc] initWithDuration:3.0f scene:level];
     //7.左上右下轴翻转
 //        CCTransitionScene* transScene=[[CCTransitionZoomFlipAngular alloc] initWithDuration:3.0f scene:level];
 
     //director transfer to animation scene
+//    [[CCDirector sharedDirector] replaceScene:transScene];
     [[CCDirector sharedDirector] replaceScene:transScene];
+
     [transScene release];
     
 }
@@ -101,7 +121,7 @@
     //create a bird
     CCSprite *bird=[[CCSprite alloc]initWithFile:@"bird1.png"];
     //给小鸟缩放比例
-    [bird setScale:(arc4random()%10)/10.0f];
+    [bird setScale:(arc4random()%9+1)/10.0f];
     
     //generate a random number 0~50
     [bird setPosition:ccp(50.0f+arc4random()%50, 70.0f)];

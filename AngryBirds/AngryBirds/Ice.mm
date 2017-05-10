@@ -32,7 +32,7 @@
     
     b2Body * ballBody = world->CreateBody(&ballBodyDef);
     
-    //    // Create block shape
+    //Create block shape
     b2PolygonShape blockShape;
     blockShape.SetAsBox(self.contentSize.width/11/PTM_RATIO,self.contentSize.height/11/PTM_RATIO);
     
@@ -40,7 +40,7 @@
     b2FixtureDef ballShapeDef;
     ballShapeDef.shape = &blockShape;
     ballShapeDef.density = 10.0f;
-    ballShapeDef.friction = 1.0f; // We don't want the ball to have friction!
+    ballShapeDef.friction = 1.0f;
     ballShapeDef.restitution = 0;
     ballBody->CreateFixture(&ballShapeDef);
     

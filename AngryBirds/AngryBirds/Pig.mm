@@ -11,9 +11,9 @@
 @implementation Pig
 
 -(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
+    myLayer = layer;
     myWorld = world;
     imageURL=@"pig";
-    myLayer = layer;
     
     self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
 
@@ -38,7 +38,7 @@
     b2FixtureDef ballShapeDef;
     ballShapeDef.shape = &shape;
     ballShapeDef.density = 80.0f;
-    ballShapeDef.friction = 80.0f; // We don't want the ball to have friction!
+    ballShapeDef.friction = 100.0f; // We don't want the ball to have friction!
     ballShapeDef.restitution = 0.15f;
     body->CreateFixture(&ballShapeDef);
 

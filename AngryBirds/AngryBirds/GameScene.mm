@@ -14,13 +14,13 @@
 
 @implementation GameScene
 
-+(id)scene{
-    CCScene* cs=[CCScene node];
-    GameScene* gs=[[GameScene alloc]init];
-    [cs addChild:gs];
-    [gs release];
-    return cs;
-}
+//+(id)scene{
+//    CCScene* cs=[CCScene node];
+//    GameScene* gs=[[GameScene alloc]init];
+//    [cs addChild:gs];
+//    [gs release];
+//    return cs;
+//}
 
 +(id) sceneWithLevel:(int)level{
     CCScene* cs=[CCScene node];
@@ -240,7 +240,6 @@
                 CCSprite *pig= [[Pig alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
                 NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
                 [self addChild:pig];
-                NSLog(@"PIG: ");
                 [pig release];
                 break;
             }
@@ -249,7 +248,6 @@
                 CCSprite *ice = [[Ice alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
                 [self addChild:ice];
                 NSLog(@"ICE: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
-
                 [ice release];
                 break;
             }
@@ -257,11 +255,11 @@
                 break;
         }
     }
-    CCSprite* pig=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
+//    CCSprite* fuck=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
 //    NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
     
-    [self addChild:pig];
-    [pig release];
+//    [self addChild:fuck];
+//    [fuck release];
     
     //bird can show
     birds= [[NSMutableArray alloc]init];

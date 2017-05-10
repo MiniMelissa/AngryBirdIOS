@@ -90,15 +90,16 @@
         //make sure back is in self, tag=100 means it is 100
         if(CGRectContainsPoint(one.boundingBox, nodePoint)&&one.tag==100){
             CCScene * cs= [StartScene scene];
-            CCTransitionScene* trans=[[CCTransitionSplitRows alloc]initWithDuration:1.0f scene:cs];
+            CCTransitionScene* trans=[[CCTransitionMoveInB alloc]initWithDuration:1.0f scene:cs];
             [[CCDirector sharedDirector] replaceScene:trans];
             [trans release];
         }
-        else if(CGRectContainsPoint(one.boundingBox, nodePoint)&& one.tag<sucesslevel+1 && one.tag) {
+        else if(CGRectContainsPoint(one.boundingBox, nodePoint)&& one.tag<sucesslevel+1 && one.tag>0) {
             NSLog(@"choose %ld\n .",(long)one.tag);
 //            CCScene* cs=[GameScene scene];
 
-            CCScene* cs=[GameScene sceneWithLevel:one.tag];
+            //change one.tag(=-1) to 2, pig and ice appear
+            CCScene* cs=[GameScene sceneWithLevel:2];
             [[CCDirector sharedDirector] replaceScene:cs];
         }
     }

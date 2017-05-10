@@ -35,7 +35,9 @@
     //we still need override init method
     return [[[[self class] alloc] init ] autorelease];
 }
+
 -(id) init{
+    
     //self is CCLayer
     self= [super init];
     if(self){
@@ -43,12 +45,39 @@
         //first, get width and height of screen
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
+        NSLog(@"loading screen: x:%f,y:%f",winSize.width,winSize.height);
+        
         //sprite ->pic
-        CCSprite *sp= [CCSprite spriteWithFile:@"loading.png"];
+        CCSprite *sp= [CCSprite spriteWithFile:@"ls.jpg"];
+        NSLog(@"pic: x:%f, y:%f",sp.contentSize.width,sp.contentSize.height);
+        
+        //set anchor point
+        [sp setAnchorPoint:ccp(0.0f, 0.0f)];
+        [sp setPosition:ccp(0.0f, 0.0f)];
+        //pic 480*320(5,5s,se) need to change to 667*375(6,6s,7)
+//        [sp setScaleX:1.39f];
+//        [sp setScaleY:1.17f];
+        //pic: 1920*1080
+//        [sp setScaleX:0.35f];
+        [sp setScaleY:winSize.width/sp.contentSize.width];
+        [sp setScale:winSize.height/sp.contentSize.height];
+        
+//        [sp setScale:1.3f];
+
+        
 //        CCSprite *sp= [CCSprite spriteWithFile:@"loading.png" rect:()];
         //set 重心坐标 ccp=CGPoint
-        [sp setPosition:ccp(winSize.width/2.0f, winSize.height/2.0f)];
+//        [sp setPosition:ccp(winSize.width/2.0f, winSize.height/2.0f)];
         [self addChild:sp];
+        
+        
+        //set logo
+        CCSprite* ablogo=[CCSprite spriteWithFile:@"ABNewLogo.png"];
+        NSLog(@"ablogo: x:%f, y:%f",ablogo.contentSize.width,ablogo.contentSize.height);
+        [ablogo setScale:0.3f];
+        [ablogo setPosition:ccp(winSize.width/2,310.0f)];
+        [self addChild:ablogo];
+
         
         //initialize loadingtitle as "Loading" with font arial16
         loadingtitle = [[CCLabelBMFont alloc]initWithString:@"Loading" fntFile:@"arial16.fnt"];
@@ -59,7 +88,7 @@
         
         [self addChild:loadingtitle];
         //让loading 每隔2s前进一个“.”, call [self loadTick:] method every 2s
-        [self schedule:@selector(loadTick:) interval:2.0f];
+        [self schedule:@selector(loadTick:) interval:1.0f];
         
     }
     return self;
