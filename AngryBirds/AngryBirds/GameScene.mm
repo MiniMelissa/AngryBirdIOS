@@ -42,6 +42,7 @@ int birdCount=0,pigCount=0;
     if(self){
         currentlevel=level;
         birdCount=3;
+        pigCount=0;
         
         //create background
         CCSprite* bg =[CCSprite spriteWithFile:@"bg.png"];
@@ -280,10 +281,13 @@ int birdCount=0,pigCount=0;
     }
     //back to levelscene
     else if(touchStatus==TOUCH_BACK) {
-        if(pigCount==0) {
-            currentlevel+=1;
-//            [unlock unlock:currentlevel when:YES];
-            NSLog(@"unlock new level.");
+        if(pigCount==0){
+            GlobalVars *gv=[GlobalVars sharedInstance];
+            if(currentlevel==gv.maxlevel) {
+                currentlevel+=1;
+                [[GlobalVars sharedInstance] setMaxlevel:currentlevel];
+                [GameUtils writeLevelToFiel:currentlevel];
+            }
         }
         CCScene* cs= [LevelScene scene];
 //        CCScene* cs= [LevelScene sceneWithLevel:currentlevel];

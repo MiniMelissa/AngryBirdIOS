@@ -22,7 +22,7 @@
 -(id)init{
     self =[super init];
     if(self){
-        maxLevel=2;
+        maxLevel=1;
     }
     return self;
 }
@@ -30,19 +30,16 @@
 +(NSString*) getFilePath{
     //get 通关succesfully 的文件
     
-    return [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"SuccessLevel"];
+    return [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"SuccessLevels"];
 }
 
 -(int) readLevelFromFile{
     NSString* file=[[self class] getFilePath];
     NSString* s = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
-    if(s) return [s intValue];
-    
-   /* if(isFinished){
-        if(currentlevel==maxLevel){
-            return currentlevel;
-        }
-    }*/
+//    if(s) return [s intValue];
+
+    GlobalVars *gv=[GlobalVars sharedInstance];
+    maxLevel = gv.maxlevel;
     return maxLevel;
 }
 

@@ -55,9 +55,9 @@
         //add 14
         GameUtils* gu=[[GameUtils alloc]init];
         sucesslevel=[gu readLevelFromFile];
+//        sucesslevel=[GameUtils readLevelFromFile];
         NSLog(@"LevelScene: succelevel:%d",sucesslevel);
-        
-        
+
         NSString* imagePath=nil;
         for(int i=0;i<14;i++){
             if(i<sucesslevel){

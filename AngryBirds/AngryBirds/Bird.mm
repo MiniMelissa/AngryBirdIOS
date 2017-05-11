@@ -45,7 +45,7 @@
     b2FixtureDef fixtureDef;
     fixtureDef.shape=&shape;
     fixtureDef.density=80.0f;
-    fixtureDef.friction=5.0f;
+    fixtureDef.friction=20.0f;
     fixtureDef.restitution=0.5f;
     body->CreateFixture(&fixtureDef);
     

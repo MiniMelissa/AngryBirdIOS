@@ -18,6 +18,8 @@
 #import "Slingshot.h"
 #import "ContactListener.h"
 #import "LevelScene.h"
+#import "GlobalVars.h"
+#import "GameUtils.h"
 
 @protocol LockDelegate;
 

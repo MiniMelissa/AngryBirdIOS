@@ -15,6 +15,7 @@
 		7B208FF81EC408BF003AEAF8 /* Wood.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B208FF71EC408BF003AEAF8 /* Wood.mm */; };
 		7B208FFA1EC40BB7003AEAF8 /* 3.data in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FF91EC40BB7003AEAF8 /* 3.data */; };
 		7B208FFD1EC40BCF003AEAF8 /* ShortWood.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B208FFC1EC40BCF003AEAF8 /* ShortWood.mm */; };
+		7B2090001EC414E1003AEAF8 /* GlobalVars.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B208FFF1EC414E1003AEAF8 /* GlobalVars.mm */; };
 		7B96E0DF1EB90A6D009BF89E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0DE1EB90A6D009BF89E /* main.m */; };
 		7B96E0E21EB90A6D009BF89E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */; };
 		7B96E0E51EB90A6D009BF89E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E41EB90A6D009BF89E /* ViewController.m */; };
@@ -360,6 +361,8 @@
 		7B208FF91EC40BB7003AEAF8 /* 3.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 3.data; path = Level/3.data; sourceTree = "<group>"; };
 		7B208FFB1EC40BCF003AEAF8 /* ShortWood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortWood.h; sourceTree = "<group>"; };
 		7B208FFC1EC40BCF003AEAF8 /* ShortWood.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShortWood.mm; sourceTree = "<group>"; };
+		7B208FFE1EC414E1003AEAF8 /* GlobalVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVars.h; sourceTree = "<group>"; };
+		7B208FFF1EC414E1003AEAF8 /* GlobalVars.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GlobalVars.mm; sourceTree = "<group>"; };
 		7B96E0DA1EB90A6D009BF89E /* AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E0DE1EB90A6D009BF89E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B96E0E01EB90A6D009BF89E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -986,6 +989,8 @@
 				7BE40A591EBD2C8F00385866 /* GameUtils.mm */,
 				7BDA60421EC1742C00ECE366 /* ContactListener.h */,
 				7BDA60431EC1742C00ECE366 /* ContactListener.mm */,
+				7B208FFE1EC414E1003AEAF8 /* GlobalVars.h */,
+				7B208FFF1EC414E1003AEAF8 /* GlobalVars.mm */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -1643,9 +1648,9 @@
 		7BE875581EBBA27A0057195C /* Level */ = {
 			isa = PBXGroup;
 			children = (
-				7B208FF91EC40BB7003AEAF8 /* 3.data */,
 				7BE875591EBBA28A0057195C /* 1.data */,
 				7BE8755A1EBBA28A0057195C /* 2.data */,
+				7B208FF91EC40BB7003AEAF8 /* 3.data */,
 			);
 			name = Level;
 			sourceTree = "<group>";
@@ -2103,6 +2108,7 @@
 				7BE874251EBBA1230057195C /* CCTextureCache.m in Sources */,
 				7BE874411EBBA1230057195C /* TransformUtils.m in Sources */,
 				7BE40A5D1EBE16F400385866 /* GameScene.mm in Sources */,
+				7B2090001EC414E1003AEAF8 /* GlobalVars.mm in Sources */,
 				7BE874381EBBA1230057195C /* MacGLView.m in Sources */,
 				7BE874351EBBA1230057195C /* glu.c in Sources */,
 				7BE8740F1EBBA1230057195C /* CCLabelTTF.m in Sources */,

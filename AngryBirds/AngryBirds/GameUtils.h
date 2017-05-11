@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "GameScene.h"
+#import "GlobalVars.h"
 @interface GameUtils : NSObject{
-    int currentlevel;
+//    int currentlevel;
     int maxLevel;
     BOOL isFinished;
 }
