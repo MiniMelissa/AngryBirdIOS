@@ -40,7 +40,9 @@
         
         
         //add 14
-        sucesslevel=[GameUtils readLevelFromFile];
+        GameUtils* gu=[[GameUtils alloc]init];
+        sucesslevel=[gu readLevelFromFile];
+        
         
         NSString* imagePath=nil;
         for(int i=0;i<14;i++){

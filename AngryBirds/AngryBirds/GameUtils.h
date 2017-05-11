@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface GameUtils : NSObject{
-    
+#import "GameScene.h"
+@interface GameUtils : NSObject <LockDelegate>{
+    int currentlevel;
+    int maxLevel;
+    BOOL isFinished;
 }
 
-+(int) readLevelFromFile;
+//@property(nonatomic,assign)BOOL _isFinished;
+-(id)init;
+-(int) readLevelFromFile;
 +(void) writeLevelToFiel:(int)level;
 @end

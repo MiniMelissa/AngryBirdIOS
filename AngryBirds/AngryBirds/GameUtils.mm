@@ -7,10 +7,9 @@
 //
 
 #import "GameUtils.h"
-#define BIRDWIN YES
-#define PIGWIN NO
 
 @implementation GameUtils
+//@synthesize _isFinished=isFinished;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -20,17 +19,33 @@
 }
 */
 
+-(id)init{
+    self =[super init];
+    if(self){
+        maxLevel=1;
+    }
+    return self;
+}
+
 +(NSString*) getFilePath{
     //get 通关succesfully 的文件
     
     return [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"SuccessLevel"];
 }
 
-+(int) readLevelFromFile{
+-(int) readLevelFromFile{
     NSString* file=[[self class] getFilePath];
     NSString* s = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     if(s) return [s intValue];
-    return 1;
+    
+    if(isFinished){
+        if(currentlevel==maxLevel){
+            return currentlevel+1;
+        }else{
+            return maxLevel;
+        }
+    }
+    return maxLevel;
 }
 
 +(void) writeLevelToFiel:(int)level{
@@ -40,5 +55,15 @@
     NSString* file=[[self class] getFilePath];
     [s writeToFile:file atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
+
+-(void) unlock:(int)level when:(BOOL)finish{
+    currentlevel=level;
+    isFinished=finish;
+    if(maxLevel<currentlevel) maxLevel=currentlevel;
+    NSLog(@"maxLevel:%d currentlevel%d",maxLevel,currentlevel);
+    
+}
+
+
 
 @end

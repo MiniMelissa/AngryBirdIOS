@@ -14,7 +14,7 @@
 #define SLINGSHOT_POS CGPointMake(85, 140)
 
 BOOL gameFinish=NO;
-int birdCount=3,pigCount=0;
+int birdCount=0,pigCount=0;
 
 @implementation GameScene
 
@@ -41,6 +41,8 @@ int birdCount=3,pigCount=0;
     self = [super init];
     if(self){
         currentlevel=level;
+        birdCount=3;
+        
         //create background
         CCSprite* bg =[CCSprite spriteWithFile:@"bg.png"];
         CGSize winSize=[[CCDirector sharedDirector] winSize];
@@ -100,7 +102,7 @@ int birdCount=3,pigCount=0;
                 if(sb.tag==PIG_ID) pigCount++;
             }
         }
-        NSLog(@"before game start, bird#: %d, pig# : %d",birdCount,pigCount);
+//        NSLog(@"before game start, bird#: %d, pig# : %d",birdCount,pigCount);
 
     }
 
@@ -158,7 +160,6 @@ int birdCount=3,pigCount=0;
             sb.position=ccp(b->GetPosition().x*PTM_RATIO, b->GetPosition().y*PTM_RATIO);
             //把box2d中角度转换成cocos2d的角度
             sb.rotation=-1*CC_RADIANS_TO_DEGREES(b->GetAngle());
-            
             //如果小鸟停止运动删除小鸟
             if (sb.tag == BIRD_ID) {
                 if (!b->IsAwake()) {
@@ -166,8 +167,17 @@ int birdCount=3,pigCount=0;
                     [sb destroy];
                 }
             }
-            //
-            CGSize winSize = [[CCDirector sharedDirector] winSize];
+            
+            CGSize winSize=[[CCDirector sharedDirector] winSize];
+           
+            //update score in gamescene
+            /*NSString* scoreStr=[NSString stringWithFormat:@"score %d",score];
+            scoreLable = [[CCLabelTTF alloc] initWithString:scoreStr dimensions:CGSizeMake(100, 100) alignment:UITextAlignmentLeft fontName:@"Arial" fontSize:20];
+            [scoreLable setAnchorPoint:ccp(1, 1)];
+            scoreLable.position=ccp(winSize.width, 360.0);
+            [self addChild:scoreLable];
+            */
+            
             if (sb.HP <= 0 || sb.position.x > winSize.width-20 || sb.position.y < 84) {
                 if(sb.tag==PIG_ID) pigCount--;
                 if(sb.tag==BIRD_ID) birdCount--;
@@ -180,6 +190,7 @@ int birdCount=3,pigCount=0;
     }
     if(birdCount==0 || pigCount==0){
         [self gamefinish];
+        if(pigCount==0) [unlock unlock:currentlevel when:YES];
     }
 }
 
@@ -191,12 +202,11 @@ int birdCount=3,pigCount=0;
     scoreboard.position=ccp(winSize.width/2, winSize.height/2);
     [self addChild:scoreboard];
     NSString* str=[NSString stringWithFormat:@"%d",score];
-    CCLabelTTF* label=[CCLabelTTF  labelWithString:str dimensions:CGSizeMake(60.0f, 60.0f)  alignment:UITextAlignmentCenter fontName:@"Marker Felt" fontSize:30.0f];
-    label.position=ccp(winSize.width/2, winSize.height/2-30);
+    CCLabelTTF* label=[CCLabelTTF  labelWithString:str dimensions:CGSizeMake(100.0f, 100.0f)  alignment:UITextAlignmentCenter fontName:@"Marker Felt" fontSize:30.0f];
+    label.position=ccp(winSize.width/2, winSize.height/2-50);
     [self addChild:label z:2];
 }
-       
-    
+
 
        
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -375,8 +385,8 @@ int birdCount=3,pigCount=0;
     [super dealloc];
 }
 
-- (void) sprite:(SpriteBase *)sprite withScore:(int)score {
-    
+- (void) sprite:(SpriteBase *)sprite withScore:(int)totalscore {
+    score+=totalscore;
 }
 
 @end
