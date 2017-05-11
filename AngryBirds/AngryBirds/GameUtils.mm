@@ -22,7 +22,7 @@
 -(id)init{
     self =[super init];
     if(self){
-        maxLevel=1;
+        maxLevel=2;
     }
     return self;
 }
@@ -38,13 +38,11 @@
     NSString* s = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
     if(s) return [s intValue];
     
-    if(isFinished){
+   /* if(isFinished){
         if(currentlevel==maxLevel){
-            return currentlevel+1;
-        }else{
-            return maxLevel;
+            return currentlevel;
         }
-    }
+    }*/
     return maxLevel;
 }
 
@@ -56,13 +54,13 @@
     [s writeToFile:file atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
--(void) unlock:(int)level when:(BOOL)finish{
+/*-(void) unlock:(int)level when:(BOOL)finish{
     currentlevel=level;
     isFinished=finish;
     if(maxLevel<currentlevel) maxLevel=currentlevel;
-    NSLog(@"maxLevel:%d currentlevel%d",maxLevel,currentlevel);
+    NSLog(@"GameUtils: maxLevel:%d currentlevel%d",maxLevel,currentlevel);
     
-}
+}*/
 
 
 

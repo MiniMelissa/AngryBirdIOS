@@ -58,7 +58,7 @@ int birdCount=0,pigCount=0;
         scoreLable = [[CCLabelTTF alloc] initWithString:scoreStr dimensions:CGSizeMake(100, 100) alignment:UITextAlignmentLeft fontName:@"Arial" fontSize:20];
         [scoreLable setAnchorPoint:ccp(1, 1)];
         scoreLable.position=ccp(winSize.width, 360.0);
-        [self addChild:scoreLable];
+//        [self addChild:scoreLable];
         
         //create slingshot 弹弓 5/7/2017
         CCSprite* leftshot=[CCSprite spriteWithFile:@"leftshot.png"];
@@ -165,6 +165,7 @@ int birdCount=0,pigCount=0;
                 if (!b->IsAwake()) {
                     world->DestroyBody(b);
                     [sb destroy];
+                    birdCount--;
                 }
             }
             
@@ -190,7 +191,6 @@ int birdCount=0,pigCount=0;
     }
     if(birdCount==0 || pigCount==0){
         [self gamefinish];
-        if(pigCount==0) [unlock unlock:currentlevel when:YES];
     }
 }
 
@@ -280,7 +280,13 @@ int birdCount=0,pigCount=0;
     }
     //back to levelscene
     else if(touchStatus==TOUCH_BACK) {
+        if(pigCount==0) {
+            currentlevel+=1;
+//            [unlock unlock:currentlevel when:YES];
+            NSLog(@"unlock new level.");
+        }
         CCScene* cs= [LevelScene scene];
+//        CCScene* cs= [LevelScene sceneWithLevel:currentlevel];
 //        CCTransitionScene* trans=[[CCTransitionMoveInB alloc]initWithDuration:1.0f scene:cs];
         [[CCDirector sharedDirector] replaceScene:cs];
 //        [trans release];
@@ -334,12 +340,29 @@ int birdCount=0,pigCount=0;
                 [ice release];
                 break;
             }
+            case WOOD_ID:
+            {
+                CCSprite *wood = [[Wood alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+                [self addChild:wood];
+                NSLog(@"Wood: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
+                [wood release];
+                break;
+            }
+            case SHORTWOOD_ID:
+            {
+                CCSprite *shortwood = [[ShortWood alloc] initWithX:sm.x andY:sm.y andWorld:world  andLayer:self];
+                [self addChild:shortwood];
+                NSLog(@"Wood: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
+                [shortwood release];
+                break;
+            }
             default:
                 break;
         }
     }
-//    CCSprite* fuck=[[Pig alloc]initWithX:200 andY:93 andWorld:world andLayer:self];
-//    NSLog(@"PIG: tag:%d,x:%f,y:%f",sm.tag,sm.x,sm.y);
+    //wood:22*170 shortwood:100*22
+//    CCSprite* wood=[CCSprite spriteWithFile:@"shortwood1.png"];
+//    NSLog(@"wood: width:%f,height:%f",wood.contentSize.width,wood.contentSize.height);
     
 //    [self addChild:fuck];
 //    [fuck release];

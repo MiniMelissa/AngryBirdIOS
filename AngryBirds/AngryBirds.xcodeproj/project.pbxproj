@@ -12,6 +12,9 @@
 		7B208FEA1EC26D26003AEAF8 /* ABNewLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FE81EC26D26003AEAF8 /* ABNewLogo.png */; };
 		7B208FEC1EC26FB6003AEAF8 /* levelbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FEB1EC26FB6003AEAF8 /* levelbg.png */; };
 		7B208FF01EC2C29B003AEAF8 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FEF1EC2C29B003AEAF8 /* play.png */; };
+		7B208FF81EC408BF003AEAF8 /* Wood.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B208FF71EC408BF003AEAF8 /* Wood.mm */; };
+		7B208FFA1EC40BB7003AEAF8 /* 3.data in Resources */ = {isa = PBXBuildFile; fileRef = 7B208FF91EC40BB7003AEAF8 /* 3.data */; };
+		7B208FFD1EC40BCF003AEAF8 /* ShortWood.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B208FFC1EC40BCF003AEAF8 /* ShortWood.mm */; };
 		7B96E0DF1EB90A6D009BF89E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0DE1EB90A6D009BF89E /* main.m */; };
 		7B96E0E21EB90A6D009BF89E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E11EB90A6D009BF89E /* AppDelegate.mm */; };
 		7B96E0E51EB90A6D009BF89E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E0E41EB90A6D009BF89E /* ViewController.m */; };
@@ -352,6 +355,11 @@
 		7B208FE81EC26D26003AEAF8 /* ABNewLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ABNewLogo.png; path = Images/ABNewLogo.png; sourceTree = "<group>"; };
 		7B208FEB1EC26FB6003AEAF8 /* levelbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = levelbg.png; path = Images/levelbg.png; sourceTree = "<group>"; };
 		7B208FEF1EC2C29B003AEAF8 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Images/play.png; sourceTree = "<group>"; };
+		7B208FF61EC408BF003AEAF8 /* Wood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wood.h; sourceTree = "<group>"; };
+		7B208FF71EC408BF003AEAF8 /* Wood.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wood.mm; sourceTree = "<group>"; };
+		7B208FF91EC40BB7003AEAF8 /* 3.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 3.data; path = Level/3.data; sourceTree = "<group>"; };
+		7B208FFB1EC40BCF003AEAF8 /* ShortWood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortWood.h; sourceTree = "<group>"; };
+		7B208FFC1EC40BCF003AEAF8 /* ShortWood.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShortWood.mm; sourceTree = "<group>"; };
 		7B96E0DA1EB90A6D009BF89E /* AngryBirds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryBirds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E0DE1EB90A6D009BF89E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B96E0E01EB90A6D009BF89E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -995,6 +1003,10 @@
 				7BE40A6C1EBE769800385866 /* Ice.mm */,
 				7BDA603F1EC01C4000ECE366 /* Slingshot.h */,
 				7BDA60401EC01C4000ECE366 /* Slingshot.mm */,
+				7B208FF61EC408BF003AEAF8 /* Wood.h */,
+				7B208FF71EC408BF003AEAF8 /* Wood.mm */,
+				7B208FFB1EC40BCF003AEAF8 /* ShortWood.h */,
+				7B208FFC1EC40BCF003AEAF8 /* ShortWood.mm */,
 			);
 			name = sprites;
 			sourceTree = "<group>";
@@ -1631,6 +1643,7 @@
 		7BE875581EBBA27A0057195C /* Level */ = {
 			isa = PBXGroup;
 			children = (
+				7B208FF91EC40BB7003AEAF8 /* 3.data */,
 				7BE875591EBBA28A0057195C /* 1.data */,
 				7BE8755A1EBBA28A0057195C /* 2.data */,
 			);
@@ -1776,6 +1789,7 @@
 				7BE874FC1EBBA20D0057195C /* bird_11.png in Resources */,
 				7BE875291EBBA20D0057195C /* pig2.png in Resources */,
 				7BE874FA1EBBA20D0057195C /* backarrow.png in Resources */,
+				7B208FFA1EC40BB7003AEAF8 /* 3.data in Resources */,
 				7BE875031EBBA20D0057195C /* bird3.png in Resources */,
 				7BE8746A1EBBA1230057195C /* Schwarzwald Regular.ttf in Resources */,
 				7BE874691EBBA1230057195C /* Paint Boy.ttf in Resources */,
@@ -1984,6 +1998,7 @@
 				7BE874161EBBA1230057195C /* CCParticleExamples.m in Sources */,
 				7BE874261EBBA1230057195C /* CCTexturePVR.m in Sources */,
 				7BE874331EBBA1230057195C /* EAGLView.m in Sources */,
+				7B208FFD1EC40BCF003AEAF8 /* ShortWood.mm in Sources */,
 				7BE873F01EBBA1220057195C /* b2Joint.cpp in Sources */,
 				7BE874811EBBA1230057195C /* NSDictionary_JSONExtensions.m in Sources */,
 				7BE874421EBBA1230057195C /* ZipUtils.m in Sources */,
@@ -2071,6 +2086,7 @@
 				7BE40A6D1EBE769800385866 /* Ice.mm in Sources */,
 				7BE874791EBBA1230057195C /* SBJsonStreamWriter.m in Sources */,
 				7BE874321EBBA1230057195C /* CCTouchHandler.m in Sources */,
+				7B208FF81EC408BF003AEAF8 /* Wood.mm in Sources */,
 				7BE873FA1EBBA1220057195C /* CCActionGrid.m in Sources */,
 				7BE40A6A1EBE704800385866 /* JsonParser.m in Sources */,
 				7BE873D61EBBA1220057195C /* b2CollidePolygon.cpp in Sources */,

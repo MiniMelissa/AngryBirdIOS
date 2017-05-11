@@ -1,29 +1,29 @@
 //
-//  Ice.m
+//  Wood.m
 //  AngryBirds
 //
-//  Created by xumeng on 17/5/6.
+//  Created by xumeng on 17/5/10.
 //  Copyright © 2017年 xumeng. All rights reserved.
 //
 
-#import "Ice.h"
+#import "Wood.h"
 
-@implementation Ice
+@implementation Wood
 -(id)initWithX:(float)x andY:(float)y andWorld:(b2World *)world andLayer:(CCLayer<SpriteDelegate> *)layer{
     myWorld = world;
     myLayer = layer;
-    imageURL = @"ice";
+    imageURL = @"wood";
     
     HP = 27;
     fullHP = HP;
-    self=[super initWithFile:[NSString stringWithFormat:@"%@2.png",imageURL]];
-
-//    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    self=[super initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
+    
+    //    self = [self initWithFile:[NSString stringWithFormat:@"%@1.png",imageURL]];
     self.position = ccp(x, y);
-    self.tag = ICE_ID;
+    self.tag = WOOD_ID;
     float scale = 2;
     self.scale = scale/10;
-
+    
     // Create ball body
     b2BodyDef ballBodyDef;
     ballBodyDef.type = b2_dynamicBody;
@@ -40,11 +40,12 @@
     b2FixtureDef ballShapeDef;
     ballShapeDef.shape = &blockShape;
     ballShapeDef.density = 10.0f;
-    ballShapeDef.friction = 5.0f;
+    ballShapeDef.friction = 3.0f;
     ballShapeDef.restitution = 0;
     ballBody->CreateFixture(&ballShapeDef);
     
     return self;
 }
+
 
 @end

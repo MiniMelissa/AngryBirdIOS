@@ -36,6 +36,7 @@
 -(id) init{
     self=[super init];
     if(self){
+        maxlevel=1;
         CGSize screenSize=[[CCDirector sharedDirector] winSize];
         NSLog(@"start screen: x:%f,y:%f",screenSize.width,screenSize.height);
         
@@ -87,8 +88,13 @@
 -(void)startGame:(id)arg{
     NSLog(@"game begin!");
     //start levelscene
-    CCScene* level=[LevelScene scene];
     
+    
+    
+    //back to maxlevel
+    CCScene* level=[LevelScene scene];
+//    CCScene* level=[LevelScene sceneWithLevel:maxlevel];
+
     //give 5s to do splitcol transition to level
     //1.分竖条
 //        CCTransitionScene* transScene=[[CCTransitionSplitCols alloc] initWithDuration:3.0f scene:level];
@@ -153,6 +159,10 @@
     //either method below is ok;
     //[self removeChild:curNode cleanup:YES];
     [curNode removeFromParentAndCleanup:YES];
+}
+
+-(void) unlock:(int)level when:(BOOL)finish{
+    
 }
 
 @end

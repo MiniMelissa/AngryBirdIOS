@@ -13,6 +13,6 @@
     //当前成功通关数
 }
 
+//+(id) sceneWithLevel:(int)level;
 +(id) scene;
-
 @end

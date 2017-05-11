@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameScene.h"
-@interface GameUtils : NSObject <LockDelegate>{
+@interface GameUtils : NSObject{
     int currentlevel;
     int maxLevel;
     BOOL isFinished;

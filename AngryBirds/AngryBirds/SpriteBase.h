@@ -14,6 +14,8 @@
 #define BIRD_ID 1
 #define PIG_ID 2
 #define ICE_ID 3
+#define WOOD_ID 4
+#define SHORTWOOD_ID 5
 
 @protocol SpriteDelegate;
 

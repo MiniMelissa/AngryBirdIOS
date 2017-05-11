@@ -13,6 +13,8 @@
 #import "Bird.h"
 #import "Pig.h"
 #import "Ice.h"
+#import "Wood.h"
+#import "ShortWood.h"
 #import "Slingshot.h"
 #import "ContactListener.h"
 #import "LevelScene.h"
@@ -39,7 +41,7 @@
 //    collision listener
     ContactListener* contactListener;
     
-    CCLayer<LockDelegate>* unlock;//which layer the sprite shoud be put on
+   // CCLayer<LockDelegate>* unlock;//which layer the sprite shoud be put on
 
 }
 //+(id) scene;
@@ -49,8 +51,10 @@
 
 @end
 
+/*
 @protocol LockDelegate <NSObject>
 
 -(void) unlock:(int)level when:(BOOL)finish;
 
 @end
+ */

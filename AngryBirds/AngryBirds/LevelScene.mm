@@ -12,14 +12,27 @@
 
 @implementation LevelScene
 
-+(id)scene{
++(id) scene{
     CCScene * cs =[CCScene node];
-    LevelScene* ls =[[LevelScene alloc] init];
+    LevelScene* ls =[[LevelScene alloc]init];
     [cs addChild:ls];
     [ls release];
     return cs;
 }
 
+/*+(id)sceneWithLevel:(int)level{
+    CCScene * cs =[CCScene node];
+    LevelScene* ls =[LevelScene nodeWithLevel:level];
+    [cs addChild:ls];
+    [ls release];
+    return cs;
+}
++(id) nodeWithLevel:(int)level{
+    return [[[[self class]alloc]initWithLevel:level]autorelease];
+}
+
+-(id)initWithLevel:(int)level{
+}*/
 -(id)init{
     self=[super init];
     if(self){
@@ -42,11 +55,13 @@
         //add 14
         GameUtils* gu=[[GameUtils alloc]init];
         sucesslevel=[gu readLevelFromFile];
+        NSLog(@"LevelScene: succelevel:%d",sucesslevel);
         
         
         NSString* imagePath=nil;
         for(int i=0;i<14;i++){
             if(i<sucesslevel){
+//              if(i<level) {
                 //completed
                 imagePath=@"level.png";
                 NSString* str=[NSString stringWithFormat:@"%d",i+1];

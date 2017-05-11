@@ -10,7 +10,9 @@
 #import "cocos2d.h"
 #import "GameScene.h"
 
-@interface StartScene :CCLayer
+@interface StartScene :CCLayer{
+    int maxlevel;
+}
 
 +(id) scene;
 
